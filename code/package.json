@@ -1,0 +1,22 @@
+{
+  "name": "timeline",
+  "version": "1.0.0",
+  "description": "For more information, please visit https://github.com/InnovationCompetition/Timeline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InnovationCompetition/Timeline.git"
+  },
+  "author": "Ferret",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InnovationCompetition/Timeline/issues"
+  },
+  "homepage": "https://github.com/InnovationCompetition/Timeline#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
