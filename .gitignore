@@ -2,6 +2,7 @@
 
 */.DS_Store
 
-# 忽略 /node_modules
+# 忽略冗余的文件夹
 
 code/node_modules
+code/data
