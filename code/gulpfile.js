@@ -37,7 +37,6 @@ gulp.task('sass', function() {
 
 // 监控源码更改
 gulp.task('watch', function() {
-  console.log(111);
   livereload.listen();
   gulp.watch('source/pug/*.pug', ['pug']);
   gulp.watch('source/ls/*.ls', ['ls']);
