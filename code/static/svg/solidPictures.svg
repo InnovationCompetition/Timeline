@@ -1,0 +1,11 @@
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="5" height="5" style="fill:rgb(82,82,82);stroke-width:1;stroke:rgb(82,82,82);"/>
+  <rect x="10" y="2" width="5" height="5" style="fill:rgb(82,82,82);stroke-width:1;stroke:rgb(82,82,82);"/>
+  <rect x="18" y="2" width="5" height="5" style="fill:rgb(82,82,82);stroke-width:1;stroke:rgb(82,82,82);"/>
+  <rect x="2" y="10" width="5" height="5" style="fill:rgb(82,82,82);stroke-width:1;stroke:rgb(82,82,82);"/>
+  <rect x="10" y="10" width="5" height="5" style="fill:rgb(82,82,82);stroke-width:1;stroke:rgb(82,82,82);"/>
+  <rect x="18" y="10" width="5" height="5" style="fill:rgb(82,82,82);stroke-width:1;stroke:rgb(82,82,82);"/>
+  <rect x="2" y="18" width="5" height="5" style="fill:rgb(82,82,82);stroke-width:1;stroke:rgb(82,82,82);"/>
+  <rect x="10" y="18" width="5" height="5" style="fill:rgb(82,82,82);stroke-width:1;stroke:rgb(82,82,82);"/>
+  <rect x="18" y="18" width="5" height="5" style="fill:rgb(82,82,82);stroke-width:1;stroke:rgb(82,82,82);"/>
+</svg>
