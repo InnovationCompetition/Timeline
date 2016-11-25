@@ -6,14 +6,27 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
     //- Angular Material style sheet
     link(rel='stylesheet', href='../css/angular-material.min.css')
-  body(ng-app='Layout', ng-cloak)
-    | 欢迎来到时间轴
+  body(ng-app='Layout', layout='column', md-theme='default', ng-cloak, ng-controller='layoutController as lc')
+    md-content
+      md-toolbar(md-scroll-shrink)
+        div.md-toolbar-tools
+          md-button.md-icon-button(aria-label='Myself', ng-click='lc.navigateTo("myself")')
+            md-icon(md-svg-icon='{{lc.svgs.myself}}')
+          md-button.md-icon-button(aria-label='Others', ng-click='lc.navigateTo("others")')
+            md-icon(md-svg-icon='{{lc.svgs.others}}')
+          span(flex)
+          md-button.md-icon-button(aria-label='Search')
+            md-icon(md-svg-icon='../svg/search.svg')
+      md-content.fullscreen(ui-view, flex)
     //- Angular Material requires Angular.js Libraries
     script(src='../js/angular.min.js')
     script(src='../js/angular-animate.min.js')
     script(src='../js/angular-aria.min.js')
     script(src='../js/angular-messages.min.js')
+    script(src='../js/angular-ui-router.min.js')
     //- Angular Material Library
     script(src='../js/angular-material.min.js')
     //- 自己的应用引导
+    script(src='../js/myself.js')
+    script(src='../js/others.js')
     script(src='../js/layout.js')
