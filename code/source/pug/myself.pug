@@ -1,7 +1,6 @@
 link(rel='stylesheet', type='text/css', href='../css/myself.css')
 
 md-content(ng-controller='myselfController as mc')
-  div.userBackground(layout='row')
-    div.avatarContainer
-      img.avatar(ng-src='{{mc.userInfomation.avatarUrl}}')
-    div(flex)
+  div.userContainer(layout='column')
+    div.userBackground(style='background-image: url("{{mc.userInfomation.backgroundUrl}}")')
+    img.avatar.md-whiteframe-2dp(ng-src='{{mc.userInfomation.avatarUrl}}')

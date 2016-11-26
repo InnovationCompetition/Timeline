@@ -1,11 +1,16 @@
-.userBackground {
-  width: 100%;
-  height: 144px;
-  background-color: lightgray; }
-  .userBackground .avatarContainer {
-    padding: 32px 16px 32px 16px; }
-    .userBackground .avatarContainer .avatar {
-      width: 80px;
-      height: 80px;
-      border-width: 0px;
-      border-radius: 40px; }
+.userContainer {
+  height: 204px;
+  position: relative; }
+  .userContainer .userBackground {
+    width: 100%;
+    height: 144px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto; }
+  .userContainer .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    position: absolute;
+    left: 16px;
+    top: 104px; }
