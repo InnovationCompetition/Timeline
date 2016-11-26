@@ -1,4 +1,4 @@
-angular.module 'Layout', ['ngMaterial', 'ui.router']
+angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others']
 
 .config ($mdThemingProvider, $stateProvider, $urlRouterProvider) !->
   # 定义主题

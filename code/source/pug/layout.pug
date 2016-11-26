@@ -10,11 +10,13 @@ html
     md-content
       md-toolbar(md-scroll-shrink)
         div.md-toolbar-tools
+          h2
+            span 时间轴
+          span(flex)
           md-button.md-icon-button(aria-label='Myself', ng-click='lc.navigateTo("myself")')
             md-icon(md-svg-icon='{{lc.svgs.myself}}')
           md-button.md-icon-button(aria-label='Others', ng-click='lc.navigateTo("others")')
             md-icon(md-svg-icon='{{lc.svgs.others}}')
-          span(flex)
           md-button.md-icon-button(aria-label='Search')
             md-icon(md-svg-icon='../svg/search.svg')
       md-content.fullscreen(ui-view, flex)

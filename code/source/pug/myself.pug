@@ -1,1 +1,7 @@
-md-content.md-padding 自己
+link(rel='stylesheet', type='text/css', href='../css/myself.css')
+
+md-content(ng-controller='myselfController as mc')
+  div.userBackground(layout='row')
+    div.avatarContainer
+      img.avatar(ng-src='{{mc.userInfomation.avatarUrl}}')
+    div(flex)
