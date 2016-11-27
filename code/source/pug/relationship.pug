@@ -1,2 +1,44 @@
-md-content.md-padding.greyBackground(ng-controller='relationshipController as rc')
-  div 这是放关系轴的那个页面
+link(rel='stylesheet', href='../css/relationship.css')
+
+div.md-padding.relationBackground(ng-controller='relationshipController as rc'
+flex layout-fill ng-cloak layout="column")
+    section
+      md-subheader(class="md-primary") July
+      md-list(layout-padding)
+        md-list-item(class="md-3-line" ng-repeat="message in messages")
+            img(ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}")
+            div(class="md-list-item-text")
+              h3 {{message.what}}
+              h4 {{message.who}}
+              p {{message.notes}}
+
+    section
+      md-subheader(class="md-warn") August
+      md-list(class="md-dense" layout="column" layout-padding)
+        md-list-item(class="md-3-line" ng-repeat="message in messages")
+          img(ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}")
+          div(class="md-list-item-text")
+            h3 {{message.what}}
+            h4 {{message.who}}
+            p {{message.notes}}
+
+    section
+      md-subheader September
+      md-list(class="md-dense" layout="column" layout-padding)
+        md-list-item(class="md-3-line" ng-repeat="message in messages")
+          img(ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}")
+          div(class="md-list-item-text")
+            h3 {{message.what}}
+            h4 {{message.who}}
+            p {{message.notes}}
+
+
+    section
+      md-subheader(class="md-accent") Octorber
+      md-list(class="md-dense" layout="column" layout-padding)
+        md-list-item(class="md-3-line" ng-repeat="message in messages")
+          img(ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}")
+          div(class="md-list-item-text")
+            h3 {{message.what}}
+            h4 {{message.who}}
+            p {{message.notes}}
