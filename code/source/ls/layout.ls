@@ -1,4 +1,4 @@
-angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others']
+angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictures', 'timeline', 'relationship', 'punchedCard']
 
 .config ($mdThemingProvider, $stateProvider, $urlRouterProvider) !->
   # 定义主题

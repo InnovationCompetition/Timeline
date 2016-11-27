@@ -7,8 +7,8 @@ html
     //- Angular Material style sheet
     link(rel='stylesheet', href='../css/angular-material.min.css')
   body(ng-app='Layout', layout='column', md-theme='default', ng-cloak, ng-controller='layoutController as lc')
-    md-content
-      md-toolbar(md-scroll-shrink)
+    md-content(layout='column')
+      md-toolbar
         div.md-toolbar-tools
           h2
             span 时间轴
@@ -32,3 +32,7 @@ html
     script(src='../js/myself.js')
     script(src='../js/others.js')
     script(src='../js/layout.js')
+    script(src='../js/pictures.js')
+    script(src='../js/punchedCard.js')
+    script(src='../js/relationship.js')
+    script(src='../js/timeline.js')
