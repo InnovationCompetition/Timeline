@@ -1,2 +1,6 @@
 .greyBackground {
   background-color: #f2f2f2 !important; }
+  .greyBackground .leftCard {
+    margin-right: 0px; }
+  .greyBackground .rightCard {
+    margin-left: 0px; }

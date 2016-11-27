@@ -1,4 +1,12 @@
 link(rel='stylesheet', href='../css/pictures.css')
 
-md-content.md-padding.greyBackground(ng-controller='picturesController as pc')
-  div 这是全放照片的那个页面
+md-content.greyBackground(ng-controller='picturesController as pc', layout='row')
+  div(flex='33')
+    md-card.leftCard(ng-repeat='picture in pc.pictures', ng-if='$index % 3 == 0')
+      img(ng-src='{{picture}}')
+  div(flex='33')
+    md-card(ng-repeat='picture in pc.pictures', ng-if='$index % 3 == 1')
+      img(ng-src='{{picture}}')
+  div(flex='33')
+    md-card.rightCard(ng-repeat='picture in pc.pictures', ng-if='$index % 3 == 2')
+      img(ng-src='{{picture}}')
