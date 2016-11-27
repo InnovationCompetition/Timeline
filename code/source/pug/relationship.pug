@@ -2,43 +2,9 @@ link(rel='stylesheet', href='../css/relationship.css')
 
 div.md-padding.relationBackground(ng-controller='relationshipController as rc'
 flex layout-fill ng-cloak layout="column")
-    section
-      md-subheader(class="md-primary") July
-      md-list(layout-padding)
-        md-list-item(class="md-3-line" ng-repeat="message in messages")
-            img(ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}")
-            div(class="md-list-item-text")
-              h3 {{message.what}}
-              h4 {{message.who}}
-              p {{message.notes}}
-
-    section
-      md-subheader(class="md-warn") August
-      md-list(class="md-dense" layout="column" layout-padding)
-        md-list-item(class="md-3-line" ng-repeat="message in messages")
-          img(ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}")
-          div(class="md-list-item-text")
-            h3 {{message.what}}
-            h4 {{message.who}}
-            p {{message.notes}}
-
-    section
-      md-subheader September
-      md-list(class="md-dense" layout="column" layout-padding)
-        md-list-item(class="md-3-line" ng-repeat="message in messages")
-          img(ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}")
-          div(class="md-list-item-text")
-            h3 {{message.what}}
-            h4 {{message.who}}
-            p {{message.notes}}
-
-
-    section
-      md-subheader(class="md-accent") Octorber
-      md-list(class="md-dense" layout="column" layout-padding)
-        md-list-item(class="md-3-line" ng-repeat="message in messages")
-          img(ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}")
-          div(class="md-list-item-text")
-            h3 {{message.what}}
-            h4 {{message.who}}
-            p {{message.notes}}
+    section(ng-repeat="message in messages")
+      md-subheader(class="md-primary") {{message.monthTime}}
+      md-list(layout="column" layout-padding layout-align="center center")
+        md-list-item(ng-repeat="message2 in messages")
+          md-button(text-align= "center" class="md-fab md-mini" aria-label="TimeNode" ng-if="message2.share== 1" style="border-color: #E91E63") {{message2.dayTime}}
+          md-button(text-align= "center" ng-disabled="true" class="md-fab md-mini" aria-label="TimeNode2" ng-if="message2.share== 0" style="border-color: #9E9E9E") {{message2.dayTime}}

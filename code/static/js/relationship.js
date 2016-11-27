@@ -1,16 +1,15 @@
 (function(){
   angular.module('relationship', ['ngMaterial']).controller('relationshipController', function($scope){
-    var i$, i, id;
+    var text, i$, i;
+    text = ["一", "二", "三", "四", "五", "六"];
     $scope.messages = [];
-    for (i$ = 0; i$ <= 8; ++i$) {
+    for (i$ = 0; i$ <= 5; ++i$) {
       i = i$;
-      id = i % 8 + 1;
       $scope.messages.push({
-        face: '../img/demo/' + id + '.jpg',
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        monthTime: text[i] + "月",
+        dayTime: i + 1,
+        share: Math.round(Math.random()),
+        shareFace: ["../img/demo/1.jpg", "../img/demo/2.jpg"]
       });
     }
   });

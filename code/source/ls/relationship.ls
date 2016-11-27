@@ -1,13 +1,13 @@
 angular.module 'relationship', ['ngMaterial']
 
 .controller 'relationshipController', ($scope) !->
-    $scope.messages = []
-    for i from 0 to 8
-      id = i % 8 + 1
-      $scope.messages.push {
-        face : '../img/demo/' + id + '.jpg',
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
-      }
+  text = ["一", "二", "三", "四", "五", "六"]
+
+  $scope.messages = []
+  for i from 0 to 5
+    $scope.messages.push {
+      monthTime: text[i] + "月"
+      dayTime: i+1
+      share: Math.round Math.random()
+      shareFace: ["../img/demo/1.jpg", "../img/demo/2.jpg"]
+    }
