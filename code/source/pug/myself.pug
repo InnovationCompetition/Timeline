@@ -1,6 +1,6 @@
 link(rel='stylesheet', type='text/css', href='../css/myself.css')
 
-md-content(ng-controller='myselfController as mc' style="height:800px;")
+md-content(ng-controller='myselfController as mc')
   div.userContainer(layout='column')
     div.userBackground(style='background-image: url("{{mc.userInfomation.backgroundUrl}}")')
     img.avatar.md-whiteframe-2dp(ng-src='{{mc.userInfomation.avatarUrl}}')
@@ -19,11 +19,6 @@ md-content(ng-controller='myselfController as mc' style="height:800px;")
   md-tabs(md-dynamic-height md-border-bottom, md-stretch-tabs='yes')
     md-tab
       md-tab-label
-        md-icon(md-svg-icon='../svg/pictures.svg')
-      md-tab-body.md-padding
-        include pictures
-    md-tab
-      md-tab-label
         md-icon(md-svg-icon='../svg/timeline.svg')
       md-tab-body.md-padding
         include timeline
@@ -32,6 +27,11 @@ md-content(ng-controller='myselfController as mc' style="height:800px;")
         md-icon(md-svg-icon='../svg/relationship.svg')
       md-tab-body.md-padding
         include relationship
+    md-tab
+      md-tab-label
+        md-icon(md-svg-icon='../svg/pictures.svg')
+      md-tab-body.md-padding
+        include pictures
     md-tab
       md-tab-label
         md-icon(md-svg-icon='../svg/punchedCard.svg')

@@ -1,25 +1,8 @@
-.relationBackground {
-  padding: 0; }
-
-.md-button.md-fab.md-mini {
-  color: #b4b4b4;
-  background-color: white !important;
-  border-width: 6px;
-  border-style: solid;
-  border-color: grey;
-  line-height: 0px; }
-
-.md-button.md-fab.md-mini:not([disabled]):hover {
+.relationBackground .md-button.md-fab.md-mini:not([disabled]):hover {
   background-color: #E91E63 !important; }
 
-.md-button.md-fab.md-mini[disabled] {
+.relationBackground .md-button.md-fab.md-mini[disabled] {
   background-color: white; }
 
-md-list-item, md-list-item .md-list-item-inner {
-  min-height: 55px;
-  height: 60px; }
-
-#face img {
-  opacity: 0;
-  height: inherit;
-  width: inherit; }
+.relationBackground .avatar {
+  margin: 8px 12px 8px 12px; }

@@ -1,14 +1,12 @@
 link(rel='stylesheet', href='../css/relationship.css')
 
-div.md-padding.relationBackground(ng-controller='relationshipController as rc'
-flex layout-fill ng-cloak layout="column")
-    section(ng-repeat="message in messages")
-      md-subheader(class="md-primary") {{message.monthTime}}
-      md-list(layout="column" layout-padding)
-        md-list-item(ng-repeat="message2 in messages" layout="row")
-          md-button(ng-disabled="true" class="md-fab md-mini" aria-label="TimeNode2" ng-if="message2.share== 0" style="border-color: #9E9E9E") {{message2.dayTime}}
-          md-button(ng-click="showFriend()" class="md-fab md-mini" aria-label="TimeNode" ng-if="message2.share== 1" style="border-color: #E91E63") {{message2.dayTime}}
-          div(ng-hide="myVar")
-            img(ng-if="message2.sharenum > 0 && message2.share== 1" ng-src="{{message2.shareFace[0]}}" class="md-avatar newd" alt="shareFace[0]")
-            img(ng-if="message2.sharenum > 1 && message2.share== 1" ng-src="{{message2.shareFace[1]}}" class="md-avatar" alt="shareFace[1]")
-            img(ng-if="message2.sharenum > 2 && message2.share== 1" ng-src="{{message2.shareFace[2]}}" class="md-avatar" alt="shareFace[2]")
+md-content.relationBackground(ng-controller='relationshipController as rc' ng-cloak layout="column")
+  section(ng-repeat="text in monthText")
+    md-subheader(class="md-primary") {{text}}
+    md-list(layout="column" layout-padding)
+      md-list-item(ng-repeat="message in messages" ng-if="message.month == text && message.isShare" layout="row")
+        md-fab-speed-dial.md-scale(md-direction="right" md-open="message.isOpen" ng-click="showFriend()")
+          md-fab-trigger
+            md-button.md-fab.md-mini(ng-disabled="message.shareNum == 0") {{message.date}}
+          md-fab-actions
+            img.md-avatar.avatar(ng-repeat="image in message.shareFaces" ng-src="{{image}}")
