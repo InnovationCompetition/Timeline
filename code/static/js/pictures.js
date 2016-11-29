@@ -1,13 +1,13 @@
 (function(){
-  angular.module('pictures', ['ngMaterial']).controller('picturesController', function(){
-    var i$, i, id;
+  angular.module('pictures', ['ngMaterial']).controller('picturesController', function($state){
+    var i$, i, count;
     this.pictures = [];
     for (i$ = 0; i$ <= 29; ++i$) {
       i = i$;
-      id = i % 8 + 1;
+      count = i % 8 + 1;
       this.pictures.push({
-        count: i,
-        url: '../img/demo/' + id + '.jpg'
+        id: i,
+        url: '../img/demo/' + count + '.jpg'
       });
     }
   });

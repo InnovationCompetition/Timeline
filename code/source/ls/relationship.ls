@@ -1,6 +1,7 @@
 angular.module 'relationship', ['ngMaterial']
 
 .controller 'relationshipController', ($scope) !->
+  # 控制数据绑定
   $scope.monthText = ["一月", "二月", "三月"]
   numberOfDays = [31, 28, 31]
   $scope.messages = []
@@ -19,6 +20,7 @@ angular.module 'relationship', ['ngMaterial']
         isOpen: false
       }
 
+  # 控制好友头像的展开
   $scope.showFriend = !->
     for message in $scope.messages
       message.isOpen = false

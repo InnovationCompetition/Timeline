@@ -1,4 +1,4 @@
-angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictures', 'timeline', 'relationship', 'punchedCard']
+angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictures', 'timeline', 'relationship', 'punchedCard', 'photo']
 
 .config ($mdThemingProvider, $stateProvider, $urlRouterProvider) !->
   # 定义主题
@@ -11,6 +11,7 @@ angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictur
   $stateProvider
     .state 'myself', {url: '/myself', templateUrl: '../html/myself.html'}
     .state 'others', {url: '/others', templateUrl: '../html/others.html'}
+
 
 .controller 'layoutController' ($state) !->
   @svgs =

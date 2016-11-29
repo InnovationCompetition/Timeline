@@ -1,11 +1,11 @@
 angular.module 'pictures', ['ngMaterial']
 
-.controller 'picturesController' !->
+.controller 'picturesController' ($state) !->
   # 暂时用代码生成图片的路径
   @pictures = []
   for i from 0 to 29
-    id = i % 8 + 1
+    count = i % 8 + 1
     @pictures.push {
-      count: i
-      url: '../img/demo/' + id + '.jpg'
+      id: i
+      url: '../img/demo/' + count + '.jpg'
     }
