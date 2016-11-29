@@ -8,7 +8,7 @@ flex layout-fill ng-cloak layout="column")
         md-list-item(ng-repeat="message2 in messages" layout="row")
           md-button(ng-disabled="true" class="md-fab md-mini" aria-label="TimeNode2" ng-if="message2.share== 0" style="border-color: #9E9E9E") {{message2.dayTime}}
           md-button(ng-click="showFriend()" class="md-fab md-mini" aria-label="TimeNode" ng-if="message2.share== 1" style="border-color: #E91E63") {{message2.dayTime}}
-          div(ng-hide="myVar")
-            img(ng-if="message2.sharenum > 0 && message2.share== 1" ng-src="{{message2.shareFace[0]}}" class="md-avatar newd" alt="shareFace[0]")
+          div(ng-hide="hide")
+            img(ng-if="message2.sharenum > 0 && message2.share== 1" ng-src="{{message2.shareFace[0]}}" class="md-avatar" alt="shareFace[0]")
             img(ng-if="message2.sharenum > 1 && message2.share== 1" ng-src="{{message2.shareFace[1]}}" class="md-avatar" alt="shareFace[1]")
             img(ng-if="message2.sharenum > 2 && message2.share== 1" ng-src="{{message2.shareFace[2]}}" class="md-avatar" alt="shareFace[2]")
