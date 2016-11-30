@@ -1,5 +1,4 @@
 link(rel='stylesheet', type='text/css', href='../css/punchedCard.css')
 
 md-content.md-padding.greyBackground(ng-controller='punchedCardController as pcc')
-  div(layout="column" layout-align="center stretch")
-      md-calendar(class="fixed-calendar" ng-model="myDate" md-min-date="minDate" md-max-date="maxDate" md-date-filter="theDate" adjust-ui)
+  md-calendar(ng-model="myDate" md-min-date="minDate" md-max-date="maxDate")

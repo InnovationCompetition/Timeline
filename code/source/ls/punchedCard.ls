@@ -1,26 +1,35 @@
 angular.module 'punchedCard', ['ngMaterial', 'ngMessages']
 
-.controller 'punchedCardController' ($scope) !->
+.controller 'punchedCardController' ($scope, $interval) !->
     $scope.myDate = new Date()
 
     $scope.minDate = new Date(
       $scope.myDate.getFullYear()
-      $scope.myDate.getMonth() - 4
+      $scope.myDate.getMonth() - 2
       $scope.myDate.getDate())
 
-    $scope.maxDate = new Date()
+    $scope.maxDate = new Date(
+      $scope.myDate.getFullYear()
+      $scope.myDate.getMonth() + 2
+      $scope.myDate.getDate())
 
-    $scope.theDate = (date) ~>
-      date.toUTCString! is new Date(2016,10,11).toUTCString! ||  date.toUTCString! is new Date(2016,10,15).toUTCString! ||  date.toUTCString! is new Date(2016,10,27).toUTCString!
+    $ = (className) ~>
+      document.getElementsByClassName className
 
-.directive 'adjustUi' ~>
-  {
-    link: (scope, element, attrs) !->
-      element.ready !->
-        document.getElementsByClassName('md-calendar-scroll-mask')[0].style.height = (window.screen.height - 370)  + 'px'
-        date = new Array!
-        date[0] = "2016-10-11"
-        date[1] = "2016-10-15"
-        for i from 0 to date.length - 1
-           document.getElementById('md-0-month-'+date[i]).childNodes[0].style.background = 'rgb(33,150,243)'
-  }
+    random = []
+    for i from 0 to 63
+      random[i] = parseInt(5 * Math.random())
+
+    $interval !->
+      mask = $('md-calendar-scroll-mask')[0]
+      container = $('md-virtual-repeat-container')[0]
+      if mask && container
+        mask.style.height = (window.screen.height - 370)  + 'px'
+        container.style.height = (window.screen.height - 370)  + 'px'
+        days = $ 'md-calendar-date-selection-indicator'
+        for i from 0 to days.length
+          if random[i % 64] == 0
+            days[i].style.backgroundColor = '#FCE4EC'
+            days[i].style.color = '#E91E63'
+            days[i].style.fontWeight = 'bold'
+    , 500
