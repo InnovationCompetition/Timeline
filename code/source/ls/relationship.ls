@@ -1,6 +1,6 @@
 angular.module 'relationship', ['ngMaterial']
 
-.controller 'relationshipController', ($scope) !->
+.controller 'relationshipController', ($scope, $interval) !->
   # 控制数据绑定
   $scope.monthText = ["一月", "二月", "三月"]
   numberOfDays = [31, 28, 31]
@@ -19,6 +19,16 @@ angular.module 'relationship', ['ngMaterial']
         shareFaces: shareFaces
         isOpen: false
       }
+
+  # 设定canvas的高度
+  # document.getElementById("myCanvas").style.height = document.getElementById("list").height
+  $ = (ID) ~>
+    document.getElementById ID
+
+  $interval !->
+    $('canvas').height = $('list').offsetHeight
+    $('canvas').width = $('list').offsetWidth
+  , 500
 
   # 控制好友头像的展开
   $scope.showFriend = !->

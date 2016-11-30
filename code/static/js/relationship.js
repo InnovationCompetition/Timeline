@@ -1,6 +1,6 @@
 (function(){
-  angular.module('relationship', ['ngMaterial']).controller('relationshipController', function($scope){
-    var numberOfDays, i$, month, j$, to$, date, shareFaces, k$, i;
+  angular.module('relationship', ['ngMaterial']).controller('relationshipController', function($scope, $interval){
+    var numberOfDays, i$, month, j$, to$, date, shareFaces, k$, i, $, this$ = this;
     $scope.monthText = ["一月", "二月", "三月"];
     numberOfDays = [31, 28, 31];
     $scope.messages = [];
@@ -25,6 +25,13 @@
         });
       }
     }
+    $ = function(ID){
+      return document.getElementById(ID);
+    };
+    $interval(function(){
+      $('canvas').height = $('list').offsetHeight;
+      $('canvas').width = $('list').offsetWidth;
+    }, 500);
     $scope.showFriend = function(){
       var i$, ref$, len$, message;
       for (i$ = 0, len$ = (ref$ = $scope.messages).length; i$ < len$; ++i$) {
