@@ -3,6 +3,7 @@ angular.module 'myself' ['ngMaterial']
 .config ($stateProvider) !->
   $stateProvider
     .state 'photo', { url: '/photo/{id}', templateUrl: '../html/photo.html' }
+    .state 'newPost', {url: '/new-post', templateUrl: '../html/newPost.html'}
 
 .controller 'myselfController' ($scope, $state) !->
   # 初始化 Layout 属性
@@ -19,3 +20,6 @@ angular.module 'myself' ['ngMaterial']
 
   @navigateToPhoto = (id) !->
     $state.go('photo', {id: id})
+
+  @newPost = !->
+    $state.go('newPost')

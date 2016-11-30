@@ -1,3 +1,3 @@
 (function(){
-  angular.module('others', ['ngMaterial']);
+  angular.module('others', ['ngMaterial']).controller('othersController', function(){});
 }).call(this);

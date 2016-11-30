@@ -3,6 +3,9 @@
     $stateProvider.state('photo', {
       url: '/photo/{id}',
       templateUrl: '../html/photo.html'
+    }).state('newPost', {
+      url: '/new-post',
+      templateUrl: '../html/newPost.html'
     });
   }).controller('myselfController', function($scope, $state){
     $scope.$parent.changeHeader('时间轴');
@@ -19,6 +22,9 @@
       $state.go('photo', {
         id: id
       });
+    };
+    this.newPost = function(){
+      $state.go('newPost');
     };
   });
 }).call(this);

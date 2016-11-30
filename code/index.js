@@ -9,6 +9,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/static/html/layout.html'));
 });
 
+app.get('*', function (req, res) {
+  res.send('Error!');
+});
+
 app.listen(3000, function () {
   console.log('server listening on port 3000...');
 });
