@@ -10,9 +10,8 @@
     width: 100% !important;
     height: 100% !important; }
   .fixed-calendar .md-calendar-scroll-container {
-    width: 100% !important; }
-  .fixed-calendar .md-calendar-date-selection-indicator {
-    background: #2196f3; }
+    width: 100% !important;
+    height: 100% !important; }
 
 .md-calendar {
   width: 100%; }
