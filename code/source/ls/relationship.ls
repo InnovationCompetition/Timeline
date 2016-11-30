@@ -21,7 +21,6 @@ angular.module 'relationship', ['ngMaterial']
       }
 
   # 设定canvas的高度
-  # document.getElementById("myCanvas").style.height = document.getElementById("list").height
   $ = (ID) ~>
     document.getElementById ID
 
