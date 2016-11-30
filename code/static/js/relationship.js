@@ -29,8 +29,10 @@
       return document.getElementById(ID);
     };
     $interval(function(){
-      $('canvas').height = $('list').offsetHeight;
-      $('canvas').width = $('list').offsetWidth;
+      if ($('list') !== undefined && $('list') !== null) {
+        $('canvas').height = $('list').offsetHeight;
+        $('canvas').width = $('list').offsetWidth;
+      }
     }, 500);
     $scope.showFriend = function(){
       var i$, ref$, len$, message;

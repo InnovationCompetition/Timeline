@@ -25,8 +25,9 @@ angular.module 'relationship', ['ngMaterial']
     document.getElementById ID
 
   $interval !->
-    $('canvas').height = $('list').offsetHeight
-    $('canvas').width = $('list').offsetWidth
+    if $('list') != undefined && $('list') != null
+      $('canvas').height = $('list').offsetHeight
+      $('canvas').width = $('list').offsetWidth
   , 500
 
   # 控制好友头像的展开
