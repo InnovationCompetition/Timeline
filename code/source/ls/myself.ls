@@ -4,7 +4,12 @@ angular.module 'myself' ['ngMaterial']
   $stateProvider
     .state 'photo', { url: '/photo/{id}', templateUrl: '../html/photo.html' }
 
-.controller 'myselfController' ($state) !->
+.controller 'myselfController' ($scope, $state) !->
+  # 初始化 Layout 属性
+  $scope.$parent.changeHeader '时间轴'
+  $scope.$parent.changeBack false
+  $scope.$parent.changeRoute true
+
   @userInfomation =
     avatarUrl: '../img/avatar.png'
     backgroundUrl: '../img/background.png'

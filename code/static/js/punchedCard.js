@@ -1,5 +1,3 @@
 (function(){
-  angular.module('punchedCard', ['ngMaterial']).controller('punchedCardController', function(){
-    console.log('punched card!');
-  });
+  angular.module('punchedCard', ['ngMaterial']).controller('punchedCardController', function(){});
 }).call(this);

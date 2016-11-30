@@ -9,8 +9,20 @@
       url: '/others',
       templateUrl: '../html/others.html'
     });
-  }).controller('layoutController', function($state){
+  }).controller('layoutController', function($state, $scope, $window, $rootScope){
     var that;
+    $scope.header = '时间轴';
+    $scope.changeHeader = function(newHeader){
+      $scope.header = newHeader;
+    };
+    $scope.enableBack = false;
+    $scope.changeBack = function(value){
+      $scope.enableBack = value;
+    };
+    $scope.enableRoute = true;
+    $scope.changeRoute = function(value){
+      $scope.enableRoute = value;
+    };
     this.svgs = {
       myself: '../svg/solidPerson.svg',
       others: '../svg/people.svg'
@@ -25,6 +37,9 @@
         this.svgs.others = '../svg/solidPeople.svg';
       }
       $state.go(pageName);
+    };
+    this.goBack = function(){
+      $window.history.back();
     };
   });
 }).call(this);

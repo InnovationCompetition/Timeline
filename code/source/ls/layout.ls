@@ -12,8 +12,17 @@ angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictur
     .state 'myself', {url: '/myself', templateUrl: '../html/myself.html'}
     .state 'others', {url: '/others', templateUrl: '../html/others.html'}
 
+.controller 'layoutController' ($state, $scope, $window, $rootScope) !->
+  $scope.header = '时间轴'
+  $scope.changeHeader = (newHeader) !->
+    $scope.header = newHeader
+  $scope.enableBack = false
+  $scope.changeBack = (value) !->
+    $scope.enableBack = value
+  $scope.enableRoute = true
+  $scope.changeRoute = (value) !->
+    $scope.enableRoute = value
 
-.controller 'layoutController' ($state) !->
   @svgs =
     myself: '../svg/solidPerson.svg'
     others: '../svg/people.svg'
@@ -28,3 +37,6 @@ angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictur
       @svgs.myself = '../svg/person.svg'
       @svgs.others = '../svg/solidPeople.svg'
     $state.go pageName
+
+  @goBack = !->
+    $window.history.back()

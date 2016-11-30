@@ -10,14 +10,16 @@ html
     md-content(layout='column')
       md-toolbar
         div.md-toolbar-tools
+          md-button.md-icon-button(aria-label='Back', ng-click='lc.goBack()' ng-show='enableBack')
+            md-icon(md-svg-icon='../svg/back.svg')
           h2
-            span 时间轴
+            span {{header}}
           span(flex)
-          md-button.md-icon-button(aria-label='Myself', ng-click='lc.navigateTo("myself")')
+          md-button.md-icon-button(aria-label='Myself', ng-click='lc.navigateTo("myself")', ng-show='enableRoute')
             md-icon(md-svg-icon='{{lc.svgs.myself}}')
-          md-button.md-icon-button(aria-label='Others', ng-click='lc.navigateTo("others")')
+          md-button.md-icon-button(aria-label='Others', ng-click='lc.navigateTo("others")', ng-show='enableRoute')
             md-icon(md-svg-icon='{{lc.svgs.others}}')
-          md-button.md-icon-button(aria-label='Search')
+          md-button.md-icon-button(aria-label='Search', ng-show='enableRoute')
             md-icon(md-svg-icon='../svg/search.svg')
       md-content.fullscreen(ui-view, flex, id="fullscreen")
     //- Angular Material requires Angular.js Libraries

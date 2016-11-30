@@ -1,5 +1,3 @@
 (function(){
-  angular.module('timeline', ['ngMaterial']).controller('timelineController', function(){
-    console.log('timeline!');
-  });
+  angular.module('timeline', ['ngMaterial']).controller('timelineController', function(){});
 }).call(this);
