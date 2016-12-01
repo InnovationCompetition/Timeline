@@ -29,9 +29,11 @@
       return document.getElementById(ID);
     };
     $interval(function(){
-      if ($('list') !== undefined && $('list') !== null) {
-        $('canvas').height = $('list').offsetHeight;
-        $('canvas').width = $('list').offsetWidth;
+      if ($('list') !== undefined && $('list') !== null && $('canvas') !== undefined && $('canvas') !== null) {
+        if ($('canvas').height !== $('list').offsetHeight) {
+          $('canvas').height = $('list').offsetHeight;
+          $('canvas').width = $('list').offsetWidth;
+        }
       }
     }, 500);
     $scope.showFriend = function(){
