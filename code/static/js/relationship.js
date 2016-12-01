@@ -1,6 +1,6 @@
 (function(){
   angular.module('relationship', ['ngMaterial']).controller('relationshipController', function($scope, $interval){
-    var numberOfDays, i$, month, j$, to$, date, shareFaces, k$, i, $, getElementLeft, getElementTop, this$ = this;
+    var numberOfDays, i$, month, j$, to$, date, shareFaces, k$, i, $, this$ = this;
     $scope.monthText = ["一月", "二月", "三月"];
     numberOfDays = [10, 10, 10];
     $scope.messages = [];
@@ -34,33 +34,6 @@
         $('canvas').width = $('list').offsetWidth;
       }
     }, 500);
-    getElementLeft = function(element){
-      var actualLeft, current;
-      actualLeft = element.offsetLeft;
-      current = element.offsetParent;
-      for (;;) {
-        actualLeft = actualLeft + current.offsetLeft;
-        console.log(current);
-        current = current.offsetParent;
-        if (current !== null) {
-          break;
-        }
-      }
-      return actualLeft;
-    };
-    getElementTop = function(element){
-      var actualTop, current;
-      actualTop = element.offsetTop;
-      current = element.offsetParent;
-      for (;;) {
-        actualTop = actualTop + current.offsetTop;
-        current = current.offsetParent;
-        if (current !== null) {
-          break;
-        }
-      }
-      return actualTop;
-    };
     $scope.showFriend = function(){
       var i$, ref$, len$, message;
       for (i$ = 0, len$ = (ref$ = $scope.messages).length; i$ < len$; ++i$) {
@@ -70,6 +43,7 @@
     };
     $scope.getFriend = function(e, message, image){
       var x, y, ctx, i$, ref$, len$, mess, img, j$, len1$, search, str1, str2, point_x, point_y;
+      e.stopImmediatePropagation();
       message.isOpen = true;
       x = e.target.getBoundingClientRect().left + document.documentElement.scrollLeft;
       y = e.target.getBoundingClientRect().top + document.documentElement.scrollTop;

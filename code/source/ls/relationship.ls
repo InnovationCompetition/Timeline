@@ -55,6 +55,7 @@ angular.module 'relationship', ['ngMaterial']
       message.isOpen = false
 
   $scope.getFriend = (e, message, image) !->
+    e.stopImmediatePropagation();
     message.isOpen = true
     x = e.target.getBoundingClientRect().left+document.documentElement.scrollLeft
     y =  e.target.getBoundingClientRect().top+document.documentElement.scrollTop
