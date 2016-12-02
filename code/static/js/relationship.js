@@ -79,7 +79,6 @@
       } else {
         ctx = $('canvas').getContext("2d");
         ctx.strokeStyle = $scope.color[$scope.counter];
-        console.log($scope.color[$scope.counter]);
         $scope.counter++;
       }
       $scope.hold = message;
