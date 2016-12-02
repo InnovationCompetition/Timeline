@@ -11,6 +11,7 @@
     $scope.$parent.changeHeader('时间轴');
     $scope.$parent.changeBack(false);
     $scope.$parent.changeRoute(true);
+    $scope.$parent.changeSend(false);
     this.userInfomation = {
       avatarUrl: '../img/avatar.png',
       backgroundUrl: '../img/background.png',

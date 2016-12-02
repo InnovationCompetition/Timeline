@@ -22,6 +22,8 @@ html
             md-icon(md-svg-icon='{{lc.svgs.others}}')
           md-button.md-icon-button(aria-label='Search', ng-show='enableRoute')
             md-icon(md-svg-icon='../svg/search.svg')
+          md-button.md-icon-button(aria-label='Send', ng-show='enableSend')
+            md-icon(md-svg-icon='../svg/send.svg')
       md-content.fullscreen(ui-view, flex, id="fullscreen")
     //- Angular Material requires Angular.js Libraries
     script(src='../js/angular.min.js')

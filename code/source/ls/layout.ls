@@ -22,6 +22,9 @@ angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictur
   $scope.enableRoute = true
   $scope.changeRoute = (value) !->
     $scope.enableRoute = value
+  $scope.enableSend = false
+  $scope.changeSend = (value) !->
+    $scope.enableSend = value
 
   @svgs =
     myself: '../svg/solidPerson.svg'

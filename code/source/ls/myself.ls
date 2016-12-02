@@ -10,6 +10,7 @@ angular.module 'myself' ['ngMaterial']
   $scope.$parent.changeHeader '时间轴'
   $scope.$parent.changeBack false
   $scope.$parent.changeRoute true
+  $scope.$parent.changeSend false
 
   @userInfomation =
     avatarUrl: '../img/avatar.png'

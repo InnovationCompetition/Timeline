@@ -23,6 +23,10 @@
     $scope.changeRoute = function(value){
       $scope.enableRoute = value;
     };
+    $scope.enableSend = false;
+    $scope.changeSend = function(value){
+      $scope.enableSend = value;
+    };
     this.svgs = {
       myself: '../svg/solidPerson.svg',
       others: '../svg/people.svg'

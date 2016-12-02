@@ -1,0 +1,13 @@
+.newPostBackground {
+  background-color: #f2f2f2 !important; }
+  .newPostBackground .simpleTextarea {
+    border: 0;
+    outline: none;
+    resize: none; }
+  .newPostBackground .addFriend {
+    margin: 0px;
+    padding: 8px;
+    text-align: left;
+    color: #525252; }
+    .newPostBackground .addFriend md-icon {
+      margin: 0px 8px 0px 8px; }
