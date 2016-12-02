@@ -28,13 +28,6 @@ angular.module 'relationship', ['ngMaterial']
   $ = (ID) ~>
     document.getElementById ID
 
-  # $interval !->
-  #   if $('list') != undefined && $('list') != null && $('canvas') != undefined && $('canvas') != null
-  #     if $('canvas').height != $('list').offsetHeight
-  #       $('canvas').height = $('list').offsetHeight
-  #       $('canvas').width = $('list').offsetWidth
-  # , 500
-
   getElementLeft = (element) ->
     actualLeft = element.offsetLeft
     current = element.offsetParent
@@ -60,6 +53,7 @@ angular.module 'relationship', ['ngMaterial']
     for message in $scope.messages
       message.isOpen = false
 
+  # 显示关系轴
   $scope.getFriend = (e, message, image) !->
     e.stopImmediatePropagation();
     if $scope.hold != message
@@ -71,7 +65,6 @@ angular.module 'relationship', ['ngMaterial']
     else
       ctx = $('canvas').getContext("2d")
       ctx.strokeStyle = $scope.color[$scope.counter]
-      console.log $scope.color[$scope.counter]
       $scope.counter++;
     $scope.hold = message
     message.isOpen = true
@@ -83,6 +76,7 @@ angular.module 'relationship', ['ngMaterial']
     ctx.lineJoin="round"
     a = 0
     change =  36
+    # 搜索与该好友共享的节点
     for mess in document.getElementsByTagName("md-list-item")
       img = mess.getElementsByTagName("img")
       for search in img
