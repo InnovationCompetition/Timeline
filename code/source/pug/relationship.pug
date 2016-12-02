@@ -5,10 +5,10 @@ md-content.relationBackground(ng-controller='relationshipController as rc' ng-cl
   section(ng-repeat="text in monthText")
     md-subheader(class="md-primary") {{text}}
     md-list(layout="column" layout-padding)
-      md-list-item(ng-repeat="message in messages" ng-if="message.month == text" layout="row")
+      md-list-item(id= "item" ng-repeat="message in messages" ng-if="message.month == text" layout="row")
         md-fab-speed-dial.md-scale(md-direction="right" md-open="message.isOpen" ng-click="showFriend()")
           md-fab-trigger
             md-button.md-fab.md-mini(ng-if="message.shareNum == 0" ng-disabled="true" style="border-color:#9E9E9E") {{message.date}}
             md-button.md-fab.md-mini(ng-if="message.shareNum != 0" style="border-color:#FF4081") {{message.date}}
           md-fab-actions
-            img.md-avatar.avatar(ng-repeat="image in message.shareFaces" ng-src="{{image}}" ng-click="getFriend($event, message, image)" md-open="true")
+            img.md-avatar.avatar(ng-repeat="image in message.shareFaces" ng-src="{{image}}" alt="{{message.id}}" ng-click="getFriend($event, message.id, image)" md-open="true")

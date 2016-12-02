@@ -1,6 +1,9 @@
 (function(){
   angular.module('relationship', ['ngMaterial']).controller('relationshipController', function($scope, $interval){
-    var numberOfDays, i$, month, j$, to$, date, shareFaces, k$, i, $, this$ = this;
+    var numberOfDays, i$, month, j$, to$, date, shareFaces, k$, i, $, getElementLeft, getElementTop, this$ = this;
+    $scope.hold = "first";
+    $scope.counter = 0;
+    $scope.color = ['#FF5722', '#FF9800', '#8BC34A', '#F44336', '#9E9E9E', '#795548'];
     $scope.monthText = ["一月", "二月", "三月"];
     numberOfDays = [10, 10, 10];
     $scope.messages = [];
@@ -16,6 +19,7 @@
           }
         }
         $scope.messages.push({
+          id: month + "_" + date,
           month: $scope.monthText[month],
           date: date,
           isShare: parseInt(5 * Math.random()) === 0,
@@ -28,46 +32,104 @@
     $ = function(ID){
       return document.getElementById(ID);
     };
-    $interval(function(){
-      if ($('list') !== undefined && $('list') !== null && $('canvas') !== undefined && $('canvas') !== null) {
-        if ($('canvas').height !== $('list').offsetHeight) {
-          $('canvas').height = $('list').offsetHeight;
-          $('canvas').width = $('list').offsetWidth;
+    getElementLeft = function(element){
+      var actualLeft, current;
+      actualLeft = element.offsetLeft;
+      current = element.offsetParent;
+      for (;;) {
+        actualLeft = actualLeft + current.offsetLeft;
+        current = current.offsetParent;
+        if (current === null) {
+          break;
         }
       }
-    }, 500);
+      return actualLeft;
+    };
+    getElementTop = function(element){
+      var actualTop, current;
+      actualTop = element.offsetTop;
+      current = element.offsetParent;
+      for (;;) {
+        actualTop = actualTop + current.offsetTop;
+        current = current.offsetParent;
+        if (current === null) {
+          break;
+        }
+      }
+      return actualTop;
+    };
     $scope.showFriend = function(){
       var i$, ref$, len$, message;
+      $('canvas').height = $('list').offsetHeight;
+      $('canvas').width = $('list').offsetWidth;
       for (i$ = 0, len$ = (ref$ = $scope.messages).length; i$ < len$; ++i$) {
         message = ref$[i$];
         message.isOpen = false;
       }
     };
     $scope.getFriend = function(e, message, image){
-      var x, y, ctx, i$, ref$, len$, mess, img, j$, len1$, search, str1, str2, point_x, point_y;
+      var ctx, x, y, a, change, i$, ref$, len$, mess, img, j$, len1$, search, str1, str2, point_x, point_y, pre_x, pre_y;
       e.stopImmediatePropagation();
+      if ($scope.hold !== message) {
+        $('canvas').height = $('list').offsetHeight;
+        $('canvas').width = $('list').offsetWidth;
+        ctx = $('canvas').getContext("2d");
+        ctx.strokeStyle = '#009688';
+        $scope.counter = 0;
+      } else {
+        ctx = $('canvas').getContext("2d");
+        ctx.strokeStyle = $scope.color[$scope.counter];
+        console.log($scope.color[$scope.counter]);
+        $scope.counter++;
+      }
+      $scope.hold = message;
       message.isOpen = true;
-      x = e.target.getBoundingClientRect().left + document.documentElement.scrollLeft;
-      y = e.target.getBoundingClientRect().top + document.documentElement.scrollTop;
-      console.log(x, y);
-      ctx = $('canvas').getContext("2d");
+      x = getElementLeft(e.target);
+      y = getElementTop(e.target);
       ctx.beginPath();
+      ctx.lineCap = "round";
       ctx.lineWidth = 5;
       ctx.lineJoin = "round";
-      ctx.moveTo(x, y);
+      a = 0;
+      change = 36;
       for (i$ = 0, len$ = (ref$ = document.getElementsByTagName("md-list-item")).length; i$ < len$; ++i$) {
         mess = ref$[i$];
         img = mess.getElementsByTagName("img");
         for (j$ = 0, len1$ = img.length; j$ < len1$; ++j$) {
           search = img[j$];
           str1 = String(search.src);
-          str1 = str1.substr(str1.length - 5, 5);
-          str2 = image.substr(image.length - 5, 5);
+          str1 = str1.substr(str1.length - 8, 8);
+          str2 = image.substr(image.length - 8, 8);
           if (str1 === str2) {
-            point_x = mess.getBoundingClientRect().left + document.documentElement.scrollLeft;
-            point_y = mess.getBoundingClientRect().top + document.documentElement.scrollTop;
-            ctx.lineTo(point_x, point_y);
-            console.log(point_x, point_y);
+            if (a === 0) {
+              if (search.alt === message) {
+                ctx.moveTo(x + 20, y - 298);
+              } else {
+                point_x = getElementLeft(mess);
+                point_y = getElementTop(mess);
+                pre_x = point_x;
+                pre_y = point_y;
+                ctx.moveTo(point_x + 38, point_y - 272);
+              }
+              a = 1;
+            } else {
+              if (search.alt === message) {
+                ctx.lineTo(x + 20, pre_y - 272 + change);
+                ctx.lineTo(x + 20, y - 298);
+              } else {
+                point_x = getElementLeft(mess);
+                point_y = getElementTop(mess);
+                if (pre_y + 72 === point_y) {
+                  ctx.lineTo(point_x + 38, point_y - 272);
+                } else {
+                  ctx.lineTo(x + 20, pre_y - 272 + change);
+                  ctx.lineTo(x + 20, point_y - 272 - change);
+                  ctx.lineTo(point_x + 38, point_y - 272);
+                }
+                pre_x = point_x;
+                pre_y = point_y;
+              }
+            }
           }
         }
       }
