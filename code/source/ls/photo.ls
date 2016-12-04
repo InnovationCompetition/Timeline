@@ -15,3 +15,13 @@ angular.module 'photo' ['ngMaterial']
   $scope.$parent.changeRoute false
 
   $scope.imagePath = '../img/demo/' + (pictureId % 8 + 1) + '.jpg';
+  $scope.getFavorite = '../svg/favoriteBorder.svg'
+
+  $scope.changeFavorite = !->
+    $scope.getFavorite = '../svg/favorite.svg'
+    # if $scope.getFavorite is '../svg/favorite.svg'
+    #   $scope.getFavorite = '../svg/favoriteBorder.svg'
+    # else
+    #   $scope.getFavorite = '../svg/favorite.svg'
+
+

@@ -10,8 +10,8 @@ md-content(ng-controller='photoController as phc' class="md-padding" layout-xs="
             p 但是我什么都没有说，深藏功与名
     md-card
         md-card-actions(layout="row" layout-align="end center")
-            md-button(class="md-icon-button" aria-label="Favorite")
-                md-icon(md-svg-icon="../svg/favorite.svg")
+            md-button(class="md-icon-button" aria-label="Favorite" ng-click="changeFavorite()">)
+                md-icon(md-svg-icon="{{getFavorite}}")
             md-button(class="md-icon-button" aria-label="Settings")
                 md-icon(md-svg-icon="../svg/menu.svg")
             md-button(class="md-icon-button" aria-label="Share")

@@ -10,5 +10,9 @@
     $scope.$parent.changeBack(true);
     $scope.$parent.changeRoute(false);
     $scope.imagePath = '../img/demo/' + (pictureId % 8 + 1) + '.jpg';
+    $scope.getFavorite = '../svg/favoriteBorder.svg';
+    $scope.changeFavorite = function(){
+      $scope.getFavorite = '../svg/favorite.svg';
+    };
   });
 }).call(this);
