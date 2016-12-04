@@ -8,10 +8,13 @@
       return document.getElementsByClassName(className);
     };
     random = [];
-    for (i$ = 0; i$ <= 63; ++i$) {
+    for (i$ = 0; i$ <= 100; ++i$) {
       i = i$;
       random[i] = parseInt(5 * Math.random());
     }
+    $scope.datefilter = function(date){
+      return random[date.getDate()] !== 0;
+    };
     $interval(function(){
       var mask, container, days, i$, to$, i;
       mask = $('md-calendar-scroll-mask')[0];
@@ -22,7 +25,7 @@
         days = $('md-calendar-date-selection-indicator');
         for (i$ = 0, to$ = days.length; i$ <= to$; ++i$) {
           i = i$;
-          if (random[i % 64] === 0 && days[i] !== undefined) {
+          if (random[i % 100] === 0 && days[i] !== undefined && days) {
             days[i].style.backgroundColor = '#FCE4EC';
             days[i].style.color = '#E91E63';
             days[i].style.fontWeight = 'bold';

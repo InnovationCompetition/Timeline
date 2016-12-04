@@ -9,5 +9,6 @@
     $scope.$parent.changeHeader(getDateOfPicture(pictureId));
     $scope.$parent.changeBack(true);
     $scope.$parent.changeRoute(false);
+    $scope.imagePath = '../img/demo/' + (pictureId % 8 + 1) + '.jpg';
   });
 }).call(this);

@@ -14,8 +14,11 @@ angular.module 'punchedCard', ['ngMaterial', 'ngMessages']
       document.getElementsByClassName className
 
     random = []
-    for i from 0 to 63
+    for i from 0 to 100
       random[i] = parseInt(5 * Math.random())
+
+    $scope.datefilter = (date) ~>
+      random[date.getDate!] != 0
 
     $interval !->
       mask = $('md-calendar-scroll-mask')[0]
@@ -25,7 +28,7 @@ angular.module 'punchedCard', ['ngMaterial', 'ngMessages']
         container.style.height = (window.screen.height - 370)  + 'px'
         days = $ 'md-calendar-date-selection-indicator'
         for i from 0 to days.length
-          if random[i % 64] == 0 && days[i] != undefined
+          if random[i % 100] == 0 && days[i] != undefined && days
             days[i].style.backgroundColor = '#FCE4EC'
             days[i].style.color = '#E91E63'
             days[i].style.fontWeight = 'bold'
