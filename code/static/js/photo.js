@@ -12,7 +12,11 @@
     $scope.imagePath = '../img/demo/' + (pictureId % 8 + 1) + '.jpg';
     $scope.getFavorite = '../svg/favoriteBorder.svg';
     $scope.changeFavorite = function(){
-      $scope.getFavorite = '../svg/favorite.svg';
+      if ($scope.getFavorite === '../svg/favorite.svg') {
+        $scope.getFavorite = '../svg/favoriteBorder.svg';
+      } else {
+        $scope.getFavorite = '../svg/favorite.svg';
+      }
     };
   });
 }).call(this);

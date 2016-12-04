@@ -18,10 +18,7 @@ angular.module 'photo' ['ngMaterial']
   $scope.getFavorite = '../svg/favoriteBorder.svg'
 
   $scope.changeFavorite = !->
-    $scope.getFavorite = '../svg/favorite.svg'
-    # if $scope.getFavorite is '../svg/favorite.svg'
-    #   $scope.getFavorite = '../svg/favoriteBorder.svg'
-    # else
-    #   $scope.getFavorite = '../svg/favorite.svg'
-
-
+    if $scope.getFavorite is '../svg/favorite.svg'
+      $scope.getFavorite = '../svg/favoriteBorder.svg'
+    else
+      $scope.getFavorite = '../svg/favorite.svg'
