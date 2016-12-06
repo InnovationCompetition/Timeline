@@ -8,7 +8,10 @@ md-content.newPostBackground(ng-controller='newPostController as nc')
       md-icon(md-svg-src='../svg/circleAdd.svg')
       span 邀请好友合并节点
     div
-      md-list-item.md-padding.noright(ng-repeat='friend in friends')
+      md-list-item.noright(ng-repeat='friend in friends')
         img.md-avatar(ng-src='{{friend.avatar}}')
         p {{friend.name}}
         md-checkbox.md-secondary(ng-model='friend.isSelected')
+    md-button.addFriend(ng-click='visitPhoto()')
+      md-icon(md-svg-src='../svg/photo.svg')
+      span 拍照或选取照片

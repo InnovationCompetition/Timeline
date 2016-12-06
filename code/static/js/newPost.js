@@ -23,5 +23,6 @@
     $scope.$parent.changeBack(true);
     $scope.$parent.changeRoute(false);
     $scope.$parent.changeSend(true);
+    $scope.visitPhoto = function(){};
   });
 }).call(this);
