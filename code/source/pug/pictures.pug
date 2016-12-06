@@ -1,6 +1,6 @@
 link(rel='stylesheet', href='../css/pictures.css')
 
-md-content.picturesBackground(ng-controller='picturesController as pc', layout='row')
+md-content.picturesBackground(ng-cloak, ng-controller='picturesController as pc', layout='row')
   div(flex='33')
     md-card.leftCard(ng-repeat='picture in pc.pictures', ng-if='$index % 3 == 0')
       img(ng-src='{{picture.url}}', ng-click='mc.navigateToPhoto(picture.id)')
