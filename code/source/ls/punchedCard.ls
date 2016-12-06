@@ -5,10 +5,13 @@ angular.module 'punchedCard', ['ngMaterial', 'ngMessages']
 
     $scope.minDate = new Date(
       $scope.myDate.getFullYear()
-      $scope.myDate.getMonth() - 2
+      $scope.myDate.getMonth() - 1
       $scope.myDate.getDate())
 
-    $scope.maxDate = new Date()
+    $scope.maxDate = new Date(
+      $scope.myDate.getFullYear()
+      $scope.myDate.getMonth() + 1
+      $scope.myDate.getDate())
 
     $ = (className) ~>
       document.getElementsByClassName className

@@ -13,6 +13,8 @@
       width: 100%; }
       .punchedCardBackground .md-calendar-scroll-mask .md-virtual-repeat-container .md-virtual-repeat-scroller {
         width: 100% !important; }
+        .punchedCardBackground .md-calendar-scroll-mask .md-virtual-repeat-container .md-virtual-repeat-scroller .md-virtual-repeat-sizer {
+          height: auto !important; }
         .punchedCardBackground .md-calendar-scroll-mask .md-virtual-repeat-container .md-virtual-repeat-scroller .md-calendar {
           width: 100%; }
           .punchedCardBackground .md-calendar-scroll-mask .md-virtual-repeat-container .md-virtual-repeat-scroller .md-calendar .md-calendar-month-label {
