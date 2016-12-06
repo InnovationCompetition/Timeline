@@ -1,4 +1,4 @@
-angular.module 'photo' ['ngMaterial' 'pictures']
+angular.module 'photo' ['ngMaterial']
 
 .controller 'photoController' ($location, $scope) !->
   # 读取图片 ID
@@ -16,6 +16,7 @@ angular.module 'photo' ['ngMaterial' 'pictures']
 
   $scope.imagePath = '../img/demo/' + (pictureId % 8 + 1) + '.jpg';
   $scope.getFavorite = '../svg/favoriteBorder.svg'
+  $scope.discription= "冬天的阳光给了我所有的温暖"
 
   $scope.changeFavorite = !->
     if $scope.getFavorite is '../svg/favorite.svg'

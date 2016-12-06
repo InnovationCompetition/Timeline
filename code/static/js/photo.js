@@ -1,5 +1,5 @@
 (function(){
-  angular.module('photo', ['ngMaterial', 'pictures']).controller('photoController', function($location, $scope){
+  angular.module('photo', ['ngMaterial']).controller('photoController', function($location, $scope){
     var pictureId, getDateOfPicture, this$ = this;
     pictureId = $location.url();
     pictureId = pictureId.substr(7, pictureId.length - 7);
@@ -11,6 +11,7 @@
     $scope.$parent.changeRoute(false);
     $scope.imagePath = '../img/demo/' + (pictureId % 8 + 1) + '.jpg';
     $scope.getFavorite = '../svg/favoriteBorder.svg';
+    $scope.discription = "冬天的阳光给了我所有的温暖";
     $scope.changeFavorite = function(){
       if ($scope.getFavorite === '../svg/favorite.svg') {
         $scope.getFavorite = '../svg/favoriteBorder.svg';
