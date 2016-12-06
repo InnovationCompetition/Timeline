@@ -19,7 +19,7 @@
         $scope.friends = [];
       }
     };
-    $scope.$parent.changeHeader('创建新的时间节点');
+    $scope.$parent.changeHeader('今天的时间节点');
     $scope.$parent.changeBack(true);
     $scope.$parent.changeRoute(false);
     $scope.$parent.changeSend(true);
