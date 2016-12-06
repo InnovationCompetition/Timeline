@@ -8,4 +8,8 @@ angular.module 'pictures', ['ngMaterial']
     @pictures.push {
       id: i
       url: '../img/demo/' + count + '.jpg'
+      year: 2016
+      month: 8
+      day: 16
+      discription: "冬天的阳光给了我所有的温暖"
     }

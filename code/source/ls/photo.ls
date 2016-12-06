@@ -1,4 +1,4 @@
-angular.module 'photo' ['ngMaterial']
+angular.module 'photo' ['ngMaterial' 'pictures']
 
 .controller 'photoController' ($location, $scope) !->
   # 读取图片 ID

@@ -1,5 +1,5 @@
 (function(){
-  angular.module('photo', ['ngMaterial']).controller('photoController', function($location, $scope){
+  angular.module('photo', ['ngMaterial', 'pictures']).controller('photoController', function($location, $scope){
     var pictureId, getDateOfPicture, this$ = this;
     pictureId = $location.url();
     pictureId = pictureId.substr(7, pictureId.length - 7);

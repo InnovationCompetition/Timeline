@@ -1,18 +1,25 @@
-md-content(ng-controller='photoController as phc' class="md-padding" layout-xs="column" layout="row")
-    md-card
-        img(ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out")
-    md-card
-        md-card-title
-            md-card-title-text
-                span(class="md-headline") 又一次拯救了世界
-        md-card-content
-            p 今天，我又一次拯救了世界
-            p 但是我什么都没有说，深藏功与名
-    md-card
-        md-card-actions(layout="row" layout-align="end center")
-            md-button(class="md-icon-button" aria-label="Favorite" ng-click="changeFavorite()")
-                md-icon(md-svg-icon="{{getFavorite}}")
-            md-button(class="md-icon-button" aria-label="Settings")
-                md-icon(md-svg-icon="../svg/menu.svg")
-            md-button(class="md-icon-button" aria-label="Share")
-                md-icon(md-svg-icon="../svg/share.svg")
+link(rel='stylesheet', href='../css/photo.css')
+
+md-content.photoBackground(ng-controller='photoController as phc' layout-xs="column" layout="row")
+  md-card
+    md-card-header
+      md-card-avatar
+        img.avatar(src="../img/avatar.png")
+      md-card-header-text
+        p.md-title UserName
+    img(ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out")
+    md-card-title
+      md-card-title-text
+        span.md-headline 2016年
+        span.md-subhead 8月16日
+    md-card-content
+      p {{discription}}
+      p 所有温暖抱着我讲了所有的故事
+      p 每一个故事里都有一个美好的梦
+    md-card-actions(layout="row" layout-align="end center")
+      md-button(class="md-icon-button md-accent" aria-label="Favorite" ng-click="changeFavorite()")
+        md-icon(md-svg-icon="{{getFavorite}}")
+      md-button(class="md-icon-button" aria-label="Settings")
+        md-icon(md-svg-icon="../svg/menu.svg")
+      md-button(class="md-icon-button" aria-label="Share")
+        md-icon(md-svg-icon="../svg/share.svg")
