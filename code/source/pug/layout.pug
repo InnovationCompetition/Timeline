@@ -8,7 +8,7 @@ html
     link(rel='stylesheet', href='../css/angular-material.min.css')
     link(rel='stylesheet', type='text/css', href='../css/layout.css')
   body(ng-app='Layout', layout='column', md-theme='default', ng-cloak, ng-controller='layoutController as lc')
-    md-content(layout='column')
+    md-content(layout='column', style='height: 100%;')
       md-toolbar
         div.md-toolbar-tools
           md-button.md-icon-button(aria-label='Back', ng-click='lc.goBack()' ng-show='enableBack')

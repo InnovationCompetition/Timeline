@@ -26,6 +26,8 @@
     margin-top: 12px;
     margin-bottom: 12px;
     background: #f0f0f0; }
+  .userContainer md-tabs-content-wrapper {
+    height: 100%; }
 
 .addButton {
   position: fixed;

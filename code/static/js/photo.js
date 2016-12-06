@@ -6,12 +6,14 @@
     getDateOfPicture = function(id){
       return '2016年8月16日';
     };
-    $scope.$parent.changeHeader(getDateOfPicture(pictureId));
+    $scope.$parent.changeHeader('照片详情');
     $scope.$parent.changeBack(true);
     $scope.$parent.changeRoute(false);
     $scope.imagePath = '../img/demo/' + (pictureId % 8 + 1) + '.jpg';
     $scope.getFavorite = '../svg/favoriteBorder.svg';
-    $scope.discription = "冬天的阳光给了我所有的温暖";
+    $scope.date = '2016年8月16日';
+    $scope.descriptions = ["冬天的阳光给了我所有的温暖", "所有温暖抱着我讲了所有的故事", "每一个故事里都有一个美好的梦"];
+    $scope.username = 'Ferret';
     $scope.changeFavorite = function(){
       if ($scope.getFavorite === '../svg/favorite.svg') {
         $scope.getFavorite = '../svg/favoriteBorder.svg';

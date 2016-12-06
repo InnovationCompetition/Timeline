@@ -6,16 +6,13 @@ md-content.photoBackground(ng-controller='photoController as phc' layout-xs="col
       md-card-avatar
         img.avatar(src="../img/avatar.png")
       md-card-header-text
-        p.md-title UserName
-    img(ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out")
+        span.username {{username}}
+    div.imageContainer(style='background-image: url("{{imagePath}}")')
     md-card-title
       md-card-title-text
-        span.md-headline 2016年
-        span.md-subhead 8月16日
+        span.md-headline {{date}}
     md-card-content
-      p {{discription}}
-      p 所有温暖抱着我讲了所有的故事
-      p 每一个故事里都有一个美好的梦
+      p(ng-repeat='description in descriptions') {{description}}
     md-card-actions(layout="row" layout-align="end center")
       md-button(class="md-icon-button md-accent" aria-label="Favorite" ng-click="changeFavorite()")
         md-icon(md-svg-icon="{{getFavorite}}")
