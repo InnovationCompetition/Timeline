@@ -20,9 +20,19 @@ angular.module 'timeline', ['ngMaterial']
 
   angular.element($ 'rightImages') .ready !->
     $timeout !->
-      for card in $$ 'leftCards'
-        height = card.offsetHeight
-        console.log height
+      timeNode = $$ 'timeNode'
+      leftCards = $$ 'leftCards'
+      rightCards = $$ 'rightCards'
+      for i from 0 to leftCards.length - 1
+        height = leftCards[i].offsetHeight
+        offsetTop = leftCards[i].offsetTop
+        distance = offsetTop + height / 2 - 26
+        timeNode[2 * i].style.top = distance + 'px'
+      for i from 0 to rightCards.length - 1
+        height = rightCards[i].offsetHeight
+        offsetTop = rightCards[i].offsetTop
+        distance = offsetTop + height / 2 - 26
+        timeNode[2 * i + 1].style.top = distance + 'px'
 
   # $scope.isDrawed = 0
   # $interval !->

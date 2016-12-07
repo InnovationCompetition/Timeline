@@ -22,11 +22,23 @@
     };
     angular.element($('rightImages')).ready(function(){
       $timeout(function(){
-        var i$, ref$, len$, card, height;
-        for (i$ = 0, len$ = (ref$ = $$('leftCards')).length; i$ < len$; ++i$) {
-          card = ref$[i$];
-          height = card.offsetHeight;
-          console.log(height);
+        var timeNode, leftCards, rightCards, i$, to$, i, height, offsetTop, distance;
+        timeNode = $$('timeNode');
+        leftCards = $$('leftCards');
+        rightCards = $$('rightCards');
+        for (i$ = 0, to$ = leftCards.length - 1; i$ <= to$; ++i$) {
+          i = i$;
+          height = leftCards[i].offsetHeight;
+          offsetTop = leftCards[i].offsetTop;
+          distance = offsetTop + height / 2 - 26;
+          timeNode[2 * i].style.top = distance + 'px';
+        }
+        for (i$ = 0, to$ = rightCards.length - 1; i$ <= to$; ++i$) {
+          i = i$;
+          height = rightCards[i].offsetHeight;
+          offsetTop = rightCards[i].offsetTop;
+          distance = offsetTop + height / 2 - 26;
+          timeNode[2 * i + 1].style.top = distance + 'px';
         }
       });
     });
