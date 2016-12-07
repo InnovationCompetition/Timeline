@@ -4,6 +4,7 @@ angular.module 'myself' ['ngMaterial']
   $stateProvider
     .state 'photo', { url: '/photo/{id}', templateUrl: '../html/photo.html' }
     .state 'newPost', {url: '/new-post', templateUrl: '../html/newPost.html'}
+    .state 'timeCapsule', {url: '/time-capsule', templateUrl: '../html/timeCapsule.html'}
 
 .controller 'myselfController' ($scope, $state) !->
   # 初始化 Layout 属性
@@ -24,3 +25,6 @@ angular.module 'myself' ['ngMaterial']
 
   @newPost = !->
     $state.go('newPost')
+
+  @timeCapsule = !->
+    $state.go('timeCapsule')

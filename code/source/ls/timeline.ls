@@ -1,6 +1,7 @@
 angular.module 'timeline', ['ngMaterial']
 
 .controller 'timelineController', ($scope, $interval, $timeout) !->
+  days = [10, 8, 7, 4, 1, 31, 30, 29, 27, 24, 23]
   $scope.tlitems = []
   for i from 0 to 10
     count = i % 8 + 1
@@ -9,7 +10,7 @@ angular.module 'timeline', ['ngMaterial']
       url: '../img/demo/' + count + '.jpg'
       year: 2016
       month: 8
-      day: i + 1
+      day: days[i]
       discription: "冬天的阳光给了我所有的温暖"
     }
 

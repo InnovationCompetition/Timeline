@@ -41,8 +41,7 @@ md-content(ng-cloak ng-controller='myselfController as mc', style='height: 100%;
   md-fab-speed-dial.addButton(md-open="false" md-direction="up" class="md-scale")
     md-fab-trigger
       md-button.md-fab(aria-label="menu")
-        md-icon(md-svg-src="../svg/add.svg")
+        md-icon(md-svg-src="../svg/whiteMenu.svg")
     md-fab-actions
-      md-button.md-raised 添加结点
-      md-button.md-raised 时间囊
-
+      md-button.md-raised.menuButton(ng-click='mc.newPost()') 添加结点
+      md-button.md-raised.menuButton(ng-click='mc.timeCapsule()') 时间囊

@@ -6,6 +6,9 @@
     }).state('newPost', {
       url: '/new-post',
       templateUrl: '../html/newPost.html'
+    }).state('timeCapsule', {
+      url: '/time-capsule',
+      templateUrl: '../html/timeCapsule.html'
     });
   }).controller('myselfController', function($scope, $state){
     $scope.$parent.changeHeader('时间轴');
@@ -26,6 +29,9 @@
     };
     this.newPost = function(){
       $state.go('newPost');
+    };
+    this.timeCapsule = function(){
+      $state.go('timeCapsule');
     };
   });
 }).call(this);

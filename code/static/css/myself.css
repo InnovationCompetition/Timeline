@@ -33,3 +33,9 @@
   position: fixed;
   right: 12px;
   bottom: 12px; }
+  .addButton .menuButton {
+    padding: 0px !important;
+    font-weight: normal;
+    color: #525252 !important;
+    font-size: 0.6em;
+    min-width: 64px; }

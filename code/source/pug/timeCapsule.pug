@@ -1,0 +1,14 @@
+link(rel='stylesheet', href='../css/timeCapsule.css')
+
+md-content.timeCapsuleBackground(ng-controller='timeCapsuleController as tcc' ng-cloak)
+  div.md-padding
+    h2.md-title.title 时间囊
+  div.md-padding(layout='row')
+    div(flex)
+      md-card.leftCard(ng-repeat='node in nodes', ng-if='$index % 2 == 0')
+        div.imageContainer(style='background-image: url("{{node.imagePath}}")')
+        div.priority(ng-click='changePriority($index)' class='{{priorityLevels[node.priorityLevel % 3]}}') {{priorityLevels[node.priorityLevel % 3]}}
+    div(flex)
+      md-card.rightCard(ng-repeat='node in nodes', ng-if='$index % 2 == 1')
+        div.imageContainer(style='background-image: url("{{node.imagePath}}")')
+        div.priority(ng-click='changePriority($index)' class='{{priorityLevels[node.priorityLevel % 3]}}') {{priorityLevels[node.priorityLevel % 3]}}

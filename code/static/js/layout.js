@@ -1,5 +1,5 @@
 (function(){
-  angular.module('Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictures', 'timeline', 'relationship', 'punchedCard', 'photo', 'newPost']).config(function($mdThemingProvider, $stateProvider, $urlRouterProvider){
+  angular.module('Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictures', 'timeline', 'relationship', 'punchedCard', 'photo', 'newPost', 'timeCapsule']).config(function($mdThemingProvider, $stateProvider, $urlRouterProvider){
     $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('pink');
     $urlRouterProvider.otherwise('/myself');
     $stateProvider.state('myself', {

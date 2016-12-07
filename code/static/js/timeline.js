@@ -1,6 +1,7 @@
 (function(){
   angular.module('timeline', ['ngMaterial']).controller('timelineController', function($scope, $interval, $timeout){
-    var i$, i, count, $, $$, this$ = this;
+    var days, i$, i, count, $, $$, this$ = this;
+    days = [10, 8, 7, 4, 1, 31, 30, 29, 27, 24, 23];
     $scope.tlitems = [];
     for (i$ = 0; i$ <= 10; ++i$) {
       i = i$;
@@ -10,7 +11,7 @@
         url: '../img/demo/' + count + '.jpg',
         year: 2016,
         month: 8,
-        day: i + 1,
+        day: days[i],
         discription: "冬天的阳光给了我所有的温暖"
       });
     }
