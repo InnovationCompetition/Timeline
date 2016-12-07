@@ -37,5 +37,12 @@ md-content(ng-cloak ng-controller='myselfController as mc', style='height: 100%;
         md-icon(md-svg-icon='../svg/punchedCard.svg')
       md-tab-body.md-padding
         include punchedCard
-  md-button.md-fab.addButton(aria-label='Add', ng-click='mc.newPost()')
-    md-icon(md-svg-src='../svg/add.svg')
+
+  md-fab-speed-dial.addButton(md-open="false" md-direction="up" class="md-scale")
+    md-fab-trigger
+      md-button.md-fab(aria-label="menu")
+        md-icon(md-svg-src="../svg/add.svg")
+    md-fab-actions
+      md-button.md-raised 添加结点
+      md-button.md-raised 时间囊
+
