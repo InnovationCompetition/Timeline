@@ -1,19 +1,22 @@
 .othersBackground {
   background-color: #f2f2f2 !important; }
   .othersBackground .friends {
-    height: 12%;
+    height: 15%;
     padding-left: 10px;
     padding-right: 10px;
     background-color: white; }
-  .othersBackground .avatarContainer {
+  .othersBackground .friend {
     padding-left: 10px;
     padding-right: 10px; }
   .othersBackground .userAvatar {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%; }
+  .othersBackground .name {
+    font-size: 12px;
+    text-align: center; }
   .othersBackground .content {
-    height: 80%;
+    height: 85%;
     padding-left: 10px;
     padding-right: 10px;
     background-color: #f2f2f2 !important; }
@@ -24,7 +27,7 @@
     width: 260px;
     height: 390px; }
   .othersBackground .cardHeader {
-    height: 20%;
+    height: 15%;
     padding: 0;
     padding-left: 5%;
     padding-right: 5%; }
@@ -37,15 +40,15 @@
     background-size: cover; }
   .othersBackground .divider {
     height: 3%; }
+  .othersBackground .time {
+    height: 10%;
+    padding-left: 5%;
+    padding-right: 5%; }
   .othersBackground .cardContent {
     height: 12%;
     padding: 0;
     padding-left: 5%;
     padding-right: 5%; }
-  .othersBackground .time {
-    height: 5%;
-    margin: 0;
-    text-align: center; }
   .othersBackground .cardFooter {
     height: 10%;
     padding: 0; }
