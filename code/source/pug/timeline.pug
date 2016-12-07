@@ -1,16 +1,27 @@
 link(rel='stylesheet', href='../css/timeline.css')
 
-md-content.md-padding.timelineBackground(ng-controller='timelineController as tc' id="TlList" ng-cloak)
+md-content.timelineBackground(ng-controller='timelineController as tc' ng-cloak layout='row')
+  div(flex)
+    md-card.leftCards(ng-if='$index % 2 == 0' ng-repeat="item in tlitems")
+      img(ng-src='{{item.url}}')
+  div
+    md-list-item(ng-repeat="item in tlitems")
+      md-button.md-fab.md-mini(aria-label="Num") {{item.day}}
+  div(flex id='rightImages')
+    div.space
+    md-card.rightCards(ng-if='$index % 2 == 1' ng-repeat="item in tlitems")
+      img(ng-src='{{item.url}}')
+
   //- canvas(id="TlCanvas")
-  md-list(id="detailsList" layout="row" layout-align="center" layout-padding ng-repeat="item in tlitems")
-    div(flex="grow")
-      md-list-item(ng-repeat="item in tlitems")
-        md-card(ng-if='$index % 2 == 0')
-          img(ng-src='{{item.url}}' class="md-card-image")
-    div(flex='30')
-      md-list-item(ng-repeat="item in tlitems")
-        md-button.md-fab.md-mini(aria-label="Num") {{item.day}}
-    div(flex="grow")
-      md-list-item(ng-repeat="item in tlitems")
-        md-card(ng-if='$index % 2 == 1' class="md-card-image")
-          img(ng-src='{{item.url}}')
+  //- md-list(id="detailsList" layout="row" layout-align="center" layout-padding ng-repeat="item in tlitems")
+  //-   div(flex="grow")
+  //-     md-list-item(ng-repeat="item in tlitems")
+  //-       md-card(ng-if='$index % 2 == 0')
+  //-         img(ng-src='{{item.url}}' class="md-card-image")
+  //-   div(flex='30')
+  //-     md-list-item(ng-repeat="item in tlitems")
+  //-       md-button.md-fab.md-mini(aria-label="Num") {{item.day}}
+  //-   div(flex="grow")
+  //-     md-list-item(ng-repeat="item in tlitems")
+  //-       md-card(ng-if='$index % 2 == 1' class="md-card-image")
+  //-         img(ng-src='{{item.url}}')

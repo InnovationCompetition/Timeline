@@ -1,6 +1,6 @@
 angular.module 'timeline', ['ngMaterial']
 
-.controller 'timelineController', ($scope, $interval) !->
+.controller 'timelineController', ($scope, $interval, $timeout) !->
   $scope.tlitems = []
   for i from 0 to 10
     count = i % 8 + 1
@@ -9,15 +9,22 @@ angular.module 'timeline', ['ngMaterial']
       url: '../img/demo/' + count + '.jpg'
       year: 2016
       month: 8
-      day: i
+      day: i + 1
       discription: "冬天的阳光给了我所有的温暖"
     }
 
   $ = (ID) ~>
     document.getElementById ID
+  $$ = (className) ~>
+    document.getElementsByClassName className
 
-  $scope.isDrawed = 0
+  angular.element($ 'rightImages') .ready !->
+    $timeout !->
+      for card in $$ 'leftCards'
+        height = card.offsetHeight
+        console.log height
 
+  # $scope.isDrawed = 0
   # $interval !->
   #   if $('TlList') != undefined && $('TlList') != null && $('TlCanvas') != undefined && $('TlCanvas') != null
   #     if $('TlCanvas').height != $('TlList').offsetHeight
