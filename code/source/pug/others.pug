@@ -1,24 +1,30 @@
 link(rel='stylesheet', type='text/css', href='../css/others.css')
 
-md-content.content(ng-controller='othersController as oc', layout='row', ng-cloak)
-	div.cardContainer(layout='column', layout-align='center center', ng-repeat='user in users')
-		md-card.card
-			md-card-header.cardHeader(layout-align='start center')
-				md-card-avatar
-					img.cardAvatar(ng-src='{{user.avatar}}')
-				md-card-header-text
-					span.md-title {{user.name}}
-			div.cardImg(style='background-image: url("{{user.picture}}")')
-			div.divider
-			md-card-content.cardContent
-				p {{user.text}}
-			p.time {{user.time}}
-			md-card-footer.cardFooter(layout='row', layout-align='center start')
-				md-button(class='md-icon-button' aria-label='Favorite' ng-click='toogleFavorite($index)')
-					md-icon(md-svg-icon='{{favorites[$index]}}')
-				md-button(class='md-icon-button' aria-label='Settings')
-					md-icon(md-svg-icon='../svg/menu.svg')
-				md-button(class='md-icon-button' aria-label='Share')
-					md-icon(md-svg-icon='../svg/share.svg')
+md-content(ng-controller='othersController as oc', layout='column', style='height: 100%', ng-cloak)
+	md-content.friends(layout='row')
+		div.avatarContainer(layout='column', layout-align='center center', ng-repeat='user in users')
+			md-card-avatar
+				img.userAvatar(ng-src='{{user.avatar}}')
+	md-divider
+	md-content.content(layout='row')
+		div.cardContainer(layout='column', layout-align='center center', ng-repeat='user in users')
+			md-card.card
+				md-card-header.cardHeader(layout-align='start center')
+					md-card-avatar
+						img.cardAvatar(ng-src='{{user.avatar}}')
+					md-card-header-text
+						span.md-title {{user.name}}
+				div.cardImg(style='background-image: url("{{user.picture}}")')
+				div.divider
+				md-card-content.cardContent
+					p {{user.text}}
+				p.time {{user.time}}
+				md-card-footer.cardFooter(layout='row', layout-align='center start')
+					md-button(class='md-icon-button' aria-label='Favorite' ng-click='toogleFavorite($index)')
+						md-icon(md-svg-icon='{{favorites[$index]}}')
+					md-button(class='md-icon-button' aria-label='Settings')
+						md-icon(md-svg-icon='../svg/menu.svg')
+					md-button(class='md-icon-button' aria-label='Share')
+						md-icon(md-svg-icon='../svg/share.svg')
 md-button.md-fab.addButton(aria-label='Add2', ng-click='oc.newPost()')
 	md-icon(md-svg-src='../svg/add.svg')
