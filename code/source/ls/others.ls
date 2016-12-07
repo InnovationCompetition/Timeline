@@ -26,3 +26,6 @@ angular.module 'others' ['ngMaterial']
 			favorites[index] = '../svg/favorite.svg'
 	@newPost = !->
 		$state.go('newPost')
+
+	@timeCapsule = !->
+		$state.go('timeCapsule')

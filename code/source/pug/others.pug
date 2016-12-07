@@ -27,5 +27,10 @@ md-content.othersBackground(ng-controller='othersController as oc', layout='colu
 						md-icon(md-svg-icon='../svg/menu.svg')
 					md-button(class='md-icon-button' aria-label='Share')
 						md-icon(md-svg-icon='../svg/share.svg')
-	md-button.md-fab.addButton(aria-label='Add2', ng-click='oc.newPost()')
-		md-icon(md-svg-src='../svg/add.svg')
+	md-fab-speed-dial.addButton(md-open="false" md-direction="up" class="md-scale")
+		md-fab-trigger
+			md-button.md-fab(aria-label="menu")
+				md-icon(md-svg-src="../svg/whiteMenu.svg")
+		md-fab-actions
+			md-button.md-raised.menuButton(ng-click='oc.newPost()') 添加结点
+			md-button.md-raised.menuButton(ng-click='oc.timeCapsule()') 时间囊

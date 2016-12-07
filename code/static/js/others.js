@@ -29,5 +29,8 @@
     this.newPost = function(){
       $state.go('newPost');
     };
+    this.timeCapsule = function(){
+      $state.go('timeCapsule');
+    };
   });
 }).call(this);
