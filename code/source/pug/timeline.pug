@@ -4,9 +4,9 @@ md-content.timelineBackground(ng-controller='timelineController as tc' ng-cloak 
   div(flex)
     div(ng-repeat="item in tlitems" ng-if='$index % 2 == 0')
       md-card.leftCards
-        div.imageContainer(style='background-image: url("{{item.url}}")')
+        div.imageContainer(style='background-image: url("{{item.url}}")', ng-click='mc.navigateToPhoto(item.id)')
       div.space
-  div.timeNodeContainer
+  div.timeNodeContainer(ng-cloak)
     div.timeline
     md-list-item.timeNode(ng-repeat="item in tlitems")
       md-button.md-fab.md-mini(aria-label="Num") {{item.day}}
@@ -14,19 +14,5 @@ md-content.timelineBackground(ng-controller='timelineController as tc' ng-cloak 
     div.firstSpace
     div(ng-repeat="item in tlitems" ng-if='$index % 2 == 1')
       md-card.rightCards
-        div.imageContainer(style='background-image: url("{{item.url}}")')
+        div.imageContainer(style='background-image: url("{{item.url}}")', ng-click='mc.navigateToPhoto(item.id)')
       div.space
-
-  //- canvas(id="TlCanvas")
-  //- md-list(id="detailsList" layout="row" layout-align="center" layout-padding ng-repeat="item in tlitems")
-  //-   div(flex="grow")
-  //-     md-list-item(ng-repeat="item in tlitems")
-  //-       md-card(ng-if='$index % 2 == 0')
-  //-         img(ng-src='{{item.url}}' class="md-card-image")
-  //-   div(flex='30')
-  //-     md-list-item(ng-repeat="item in tlitems")
-  //-       md-button.md-fab.md-mini(aria-label="Num") {{item.day}}
-  //-   div(flex="grow")
-  //-     md-list-item(ng-repeat="item in tlitems")
-  //-       md-card(ng-if='$index % 2 == 1' class="md-card-image")
-  //-         img(ng-src='{{item.url}}')
