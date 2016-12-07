@@ -1,6 +1,6 @@
 link(rel='stylesheet', type='text/css', href='../css/others.css')
 
-md-content(ng-controller='othersController as oc', layout='column', style='height: 100%', ng-cloak)
+md-content.othersBackground(ng-controller='othersController as oc', layout='column', style='height: 100%', ng-cloak)
 	md-content.friends(layout='row')
 		div.avatarContainer(layout='column', layout-align='center center', ng-repeat='user in users')
 			md-card-avatar

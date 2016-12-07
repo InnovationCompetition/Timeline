@@ -1,64 +1,55 @@
-.friends {
-  height: 12%;
-  padding-left: 10px;
-  padding-right: 10px; }
-
-.avatarContainer {
-  padding-left: 10px;
-  padding-right: 10px; }
-
-.userAvatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%; }
-
-.content {
-  height: 80%;
-  padding-left: 10px;
-  padding-right: 10px; }
-
-.cardContainer {
-  padding-left: 10px;
-  padding-right: 10px; }
-
-.card {
-  width: 260px;
-  height: 390px; }
-
-.cardHeader {
-  height: 20%;
-  padding: 0;
-  padding-left: 5%;
-  padding-right: 5%; }
-
-.cardAvatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%; }
-
-.cardImg {
-  height: 50%;
-  background-size: cover; }
-
-.divider {
-  height: 3%; }
-
-.cardContent {
-  height: 12%;
-  padding: 0;
-  padding-left: 5%;
-  padding-right: 5%; }
-
-.time {
-  height: 5%;
-  margin: 0;
-  text-align: center; }
-
-.cardFooter {
-  height: 10%;
-  padding: 0; }
-
-.addButton {
-  position: fixed;
-  right: 12px;
-  bottom: 12px; }
+.othersBackground {
+  background-color: #f2f2f2 !important; }
+  .othersBackground .friends {
+    height: 12%;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white; }
+  .othersBackground .avatarContainer {
+    padding-left: 10px;
+    padding-right: 10px; }
+  .othersBackground .userAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; }
+  .othersBackground .content {
+    height: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f2f2f2 !important; }
+  .othersBackground .cardContainer {
+    padding-left: 10px;
+    padding-right: 10px; }
+  .othersBackground .card {
+    width: 260px;
+    height: 390px; }
+  .othersBackground .cardHeader {
+    height: 20%;
+    padding: 0;
+    padding-left: 5%;
+    padding-right: 5%; }
+  .othersBackground .cardAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%; }
+  .othersBackground .cardImg {
+    height: 50%;
+    background-size: cover; }
+  .othersBackground .divider {
+    height: 3%; }
+  .othersBackground .cardContent {
+    height: 12%;
+    padding: 0;
+    padding-left: 5%;
+    padding-right: 5%; }
+  .othersBackground .time {
+    height: 5%;
+    margin: 0;
+    text-align: center; }
+  .othersBackground .cardFooter {
+    height: 10%;
+    padding: 0; }
+  .othersBackground .addButton {
+    position: fixed;
+    right: 12px;
+    bottom: 12px; }
