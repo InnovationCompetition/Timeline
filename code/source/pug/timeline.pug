@@ -1,16 +1,16 @@
 link(rel='stylesheet', href='../css/timeline.css')
 
 md-content.md-padding.timelineBackground(ng-controller='timelineController as tc' id="TlList" ng-cloak)
-  canvas(id="TlCanvas")
-  md-list(id="detailsList" layout="row" layout-align="center" layout-padding='0')
+  //- canvas(id="TlCanvas")
+  md-list(id="detailsList" layout="row" layout-align="center" layout-padding ng-repeat="item in tlitems")
     div(flex="grow")
       md-list-item(ng-repeat="item in tlitems")
         md-card(ng-if='$index % 2 == 0')
-          img(ng-src='{{item.imgSrc}}' class="md-card-image")
-    div(flex='20')
+          img(ng-src='{{item.url}}' class="md-card-image")
+    div(flex='30')
       md-list-item(ng-repeat="item in tlitems")
-        button.tlButton {{item.date}}
+        md-button.md-fab.md-mini(aria-label="Num") {{item.day}}
     div(flex="grow")
       md-list-item(ng-repeat="item in tlitems")
         md-card(ng-if='$index % 2 == 1' class="md-card-image")
-          img(ng-src='{{item.imgSrc}}')
+          img(ng-src='{{item.url}}')
