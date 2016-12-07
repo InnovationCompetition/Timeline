@@ -1,4 +1,16 @@
 link(rel='stylesheet', href='../css/timeline.css')
 
-md-content.md-padding.timelineBackground(ng-cloak ng-controller='timelineController as tc')
-  div 这是放时间轴的那个页面
+md-content.md-padding.timelineBackground(ng-controller='timelineController as tc' id="TlList" ng-cloak)
+  canvas(id="TlCanvas")
+  md-list(id="detailsList" layout="row" layout-align="center" layout-padding='0')
+    div(flex="grow")
+      md-list-item(ng-repeat="item in tlitems")
+        md-card(ng-if='$index % 2 == 0')
+          img(ng-src='{{item.imgSrc}}' class="md-card-image")
+    div(flex='20')
+      md-list-item(ng-repeat="item in tlitems")
+        button.tlButton {{item.date}}
+    div(flex="grow")
+      md-list-item(ng-repeat="item in tlitems")
+        md-card(ng-if='$index % 2 == 1' class="md-card-image")
+          img(ng-src='{{item.imgSrc}}')
