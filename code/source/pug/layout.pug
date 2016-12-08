@@ -7,7 +7,7 @@ html
     //- Angular Material style sheet
     link(rel='stylesheet', href='../css/angular-material.min.css')
     link(rel='stylesheet', type='text/css', href='../css/layout.css')
-  body(ng-app='Layout', layout='column', md-theme='default', ng-cloak, ng-controller='layoutController as lc')
+  body(ng-app='Layout', layout='column', md-theme='default', ng-cloak, ng-controller='layoutController as lc', id='all')
     md-content(layout='column', style='height: 100%;')
       md-toolbar
         div.md-toolbar-tools
@@ -22,7 +22,7 @@ html
             md-icon(md-svg-icon='{{lc.svgs.others}}')
           md-button.md-icon-button(aria-label='Search', ng-show='enableRoute')
             md-icon(md-svg-icon='../svg/search.svg')
-          md-button.md-icon-button(aria-label='Send', ng-show='enableSend')
+          md-button.md-icon-button(aria-label='Send', ng-show='enableSend', ng-click='send($event)')
             md-icon(md-svg-icon='../svg/send.svg')
       md-content.fullscreen(ui-view, flex, id="fullscreen")
     //- Angular Material requires Angular.js Libraries

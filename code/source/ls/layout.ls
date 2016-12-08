@@ -12,7 +12,7 @@ angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictur
     .state 'myself', {url: '/myself', templateUrl: '../html/myself.html'}
     .state 'others', {url: '/others', templateUrl: '../html/others.html'}
 
-.controller 'layoutController' ($state, $scope, $window, $rootScope) !->
+.controller 'layoutController' ($state, $scope, $window, $rootScope, $mdDialog) !->
   $scope.header = '时间轴'
   $scope.changeHeader = (newHeader) !->
     $scope.header = newHeader
@@ -43,3 +43,15 @@ angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictur
 
   @goBack = !->
     $window.history.back()
+
+  $scope.send = (ev) !->
+    confirm = $mdDialog.confirm()
+      .parent(angular.element(document.querySelector('#all')))
+      .clickOutsideToClose(false)
+      .title('时间轴')
+      .textContent('成功创建新的时间节点！')
+      .ariaLabel('时间轴')
+      .ok('知道了！')
+      .targetEvent(ev)
+    $mdDialog.show confirm .then !->
+      $window.history.back()

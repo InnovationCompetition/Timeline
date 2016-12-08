@@ -9,7 +9,7 @@
       url: '/others',
       templateUrl: '../html/others.html'
     });
-  }).controller('layoutController', function($state, $scope, $window, $rootScope){
+  }).controller('layoutController', function($state, $scope, $window, $rootScope, $mdDialog){
     var that;
     $scope.header = '时间轴';
     $scope.changeHeader = function(newHeader){
@@ -44,6 +44,13 @@
     };
     this.goBack = function(){
       $window.history.back();
+    };
+    $scope.send = function(ev){
+      var confirm;
+      confirm = $mdDialog.confirm().parent(angular.element(document.querySelector('#all'))).clickOutsideToClose(false).title('时间轴').textContent('成功创建新的时间节点！').ariaLabel('时间轴').ok('知道了！').targetEvent(ev);
+      $mdDialog.show(confirm).then(function(){
+        $window.history.back();
+      });
     };
   });
 }).call(this);
