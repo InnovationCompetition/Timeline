@@ -6,6 +6,10 @@ md-content.newPostBackground(ng-cloak ng-controller='newPostController as nc')
   md-card
     textarea.md-padding.simpleTextarea(rows='8', md-autofocus, placeholder='说说你想说什么吧~')
     md-divider
+    md-button.addFriend(ng-click='visitPhoto()')
+      md-icon(md-svg-src='../svg/photo.svg')
+      span 拍照或选取照片
+    md-divider
     md-button.addFriend(ng-click='showFriendsList()')
       md-icon(md-svg-src='../svg/circleAdd.svg')
       span 邀请好友合并节点
@@ -14,7 +18,3 @@ md-content.newPostBackground(ng-cloak ng-controller='newPostController as nc')
         img.md-avatar(ng-src='{{friend.avatar}}')
         p {{friend.name}}
         md-checkbox.md-secondary(ng-model='friend.isSelected')
-    md-divider
-    md-button.addFriend(ng-click='visitPhoto()')
-      md-icon(md-svg-src='../svg/photo.svg')
-      span 拍照或选取照片
