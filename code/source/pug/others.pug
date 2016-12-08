@@ -7,7 +7,7 @@ md-content.othersBackground(ng-controller='othersController as oc', layout='colu
 				img.userAvatar(ng-src='{{user.avatar}}')
 			span.name {{user.name}}
 	md-divider
-	md-content.content(layout='row')
+	md-content.content(layout='row', flex)
 		div.cardContainer(layout='column', layout-align='center center', ng-repeat='user in users')
 			md-card.card
 				md-card-header.cardHeader(layout-align='start center')
