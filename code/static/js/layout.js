@@ -47,7 +47,7 @@
     };
     $scope.send = function(ev){
       var confirm;
-      confirm = $mdDialog.confirm().parent(angular.element(document.querySelector('#all'))).clickOutsideToClose(false).title('时间轴').textContent('成功创建新的时间节点！').ariaLabel('时间轴').ok('知道了！').targetEvent(ev);
+      confirm = $mdDialog.confirm().parent(angular.element(document.querySelector('#all'))).clickOutsideToClose(false).title('时间轴').textContent('成功创建新的时间节点！').ariaLabel('时间轴').ok('知道了').cancel('取消').targetEvent(ev);
       $mdDialog.show(confirm).then(function(){
         $window.history.back();
       });

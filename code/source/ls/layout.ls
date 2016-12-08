@@ -51,7 +51,8 @@ angular.module 'Layout', ['ngMaterial', 'ui.router', 'myself', 'others', 'pictur
       .title('时间轴')
       .textContent('成功创建新的时间节点！')
       .ariaLabel('时间轴')
-      .ok('知道了！')
+      .ok('知道了')
+      .cancel('取消')
       .targetEvent(ev)
     $mdDialog.show confirm .then !->
       $window.history.back()
