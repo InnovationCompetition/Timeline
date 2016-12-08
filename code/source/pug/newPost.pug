@@ -6,6 +6,7 @@ md-content.newPostBackground(ng-cloak ng-controller='newPostController as nc')
   md-card
     textarea.md-padding.simpleTextarea(rows='8', md-autofocus, placeholder='说说你想说什么吧~')
     md-divider
+    input(style='display: none;', type='file', name='photo', accept='image/*', id='selectPhoto')
     md-button.addFriend(ng-click='visitPhoto()')
       md-icon(md-svg-src='../svg/photo.svg')
       span 拍照或选取照片

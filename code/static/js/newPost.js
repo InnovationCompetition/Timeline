@@ -1,5 +1,5 @@
 (function(){
-  angular.module('newPost', ['ngMaterial']).controller('newPostController', function($scope){
+  angular.module('newPost', ['ngMaterial']).controller('newPostController', function($scope, $timeout){
     var friendsData, name, i$, i;
     friendsData = [];
     name = ['刘忍', '杨浩', '符宇晖', '舒倩', '徐佳豪', '钟正', '姚树航'];
@@ -18,6 +18,11 @@
       } else {
         $scope.friends = [];
       }
+    };
+    $scope.visitPhoto = function(){
+      $timeout(function(){
+        document.getElementById('selectPhoto').click();
+      });
     };
     $scope.$parent.changeHeader('创建新的时间节点');
     $scope.$parent.changeBack(true);

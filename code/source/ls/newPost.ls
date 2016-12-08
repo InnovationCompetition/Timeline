@@ -1,6 +1,6 @@
 angular.module 'newPost' ['ngMaterial']
 
-.controller 'newPostController' ($scope) !->
+.controller 'newPostController' ($scope, $timeout) !->
   # 暂时用代码生成好友
   friendsData = []
   name = ['刘忍', '杨浩', '符宇晖', '舒倩', '徐佳豪', '钟正', '姚树航']
@@ -17,6 +17,10 @@ angular.module 'newPost' ['ngMaterial']
       $scope.friends = friendsData
     else
       $scope.friends = []
+
+  $scope.visitPhoto = !->
+    $timeout !->
+      document.getElementById 'selectPhoto' .click()
 
   # 更改顶栏显示
   $scope.$parent.changeHeader '创建新的时间节点'
