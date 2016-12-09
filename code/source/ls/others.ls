@@ -1,6 +1,7 @@
 angular.module 'others', ['ngMaterial']
 
 .controller 'othersController', ($scope, $state, $timeout) !->
+  # 暂时使用代码生成用户动态
   users = []
   favorites = []
   names = ['刘忍', '杨浩', '符宇晖', '舒倩', '徐佳豪', '钟正', '姚树航']

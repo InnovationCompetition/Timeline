@@ -9,7 +9,7 @@ md-content.othersBackground(ng-controller="othersController as oc" style="height
 
   md-content.cardContainer(style="height: calc(100% - 144px); width: 100%")
     div(style="width: {{users.length * 296}}px; height: 100%" layout="column")
-      div(style="height: 10%")
+      div(style="height: 10%; min-height: 64px;")
       div(style="height: 80%" layout="row")
         md-card.cards(ng-repeat="user in users" style="height: 100%")
           div.space
@@ -18,7 +18,7 @@ md-content.othersBackground(ng-controller="othersController as oc" style="height
               img.avatar(src="{{user.avatar}}")
             md-card-header-text
               span.username {{user.name}}
-          div.cardImg(style="background-image: url('{{user.picture}}');")
+          div.cardImg(style='background-image: url("{{user.picture}}")')
           md-card-content {{user.time}}
             p {{user.text}}
       div(style="height: 10%")
