@@ -14,8 +14,8 @@ angular.module 'myself' ['ngMaterial']
   $scope.$parent.changeSend false
 
   @userInfomation =
-    avatarUrl: '../img/avatar.png'
-    backgroundUrl: '../img/background.png'
+    avatarUrl: '../img/avatar.jpg'
+    backgroundUrl: '../img/background.jpg'
     numberOfNodes: 97
     numberOfIntersections: 30
     numberOfFollowers: 41

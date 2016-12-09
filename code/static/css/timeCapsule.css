@@ -1,34 +1,6 @@
-.timeCapsuleBackground {
-  background-color: #f2f2f2; }
-  .timeCapsuleBackground .title {
-    margin: 8px 0px 0px 0px; }
-  .timeCapsuleBackground .imageContainer {
-    width: 100%;
-    height: 180px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    -webkit-background-size: cover; }
-  .timeCapsuleBackground .priority {
-    color: white;
-    text-align: center;
-    line-height: 32px;
-    height: 32px;
-    width: 32px;
-    border-radius: 16px;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    outline: none; }
-  .timeCapsuleBackground .H {
-    background-color: #F44336; }
-  .timeCapsuleBackground .M {
-    background-color: #2196F3; }
-  .timeCapsuleBackground .L {
-    background-color: #43A047; }
-  .timeCapsuleBackground .leftCard {
-    margin: 0px 4px 8px 0px;
-    position: relative; }
-  .timeCapsuleBackground .rightCard {
-    margin: 0px 0px 8px 4px;
-    position: relative; }
+.timeCapsuleBackground{background-color:#f2f2f2}.timeCapsuleBackground .title{margin:8px 0 0 0}
+.timeCapsuleBackground .imageContainer{width:100%;height:180px;background-repeat:no-repeat;background-position:center center;background-size:cover;-webkit-background-size:cover}
+.timeCapsuleBackground .priority{color:white;text-align:center;line-height:32px;height:32px;width:32px;border-radius:16px;position:absolute;top:4px;left:4px;outline:0}
+.timeCapsuleBackground .H{background-color:#f44336}.timeCapsuleBackground .M{background-color:#2196f3}
+.timeCapsuleBackground .L{background-color:#43a047}.timeCapsuleBackground .leftCard{margin:0 4px 8px 0;position:relative}
+.timeCapsuleBackground .rightCard{margin:0 0 8px 4px;position:relative}

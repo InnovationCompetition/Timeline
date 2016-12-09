@@ -19,7 +19,8 @@ md-content.othersBackground(ng-controller="othersController as oc" style="height
             md-card-header-text
               span.username {{user.name}}
           div.cardImg(style='background-image: url("{{user.picture}}")')
-          md-card-content {{user.time}}
+          md-card-content
+            p {{user.time}}
             p {{user.text}}
       div(style="height: 10%")
   md-fab-speed-dial.addButton.md-scale(md-open="false" md-direction="up")

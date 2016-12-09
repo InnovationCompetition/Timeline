@@ -1,6 +1,2 @@
-.picturesBackground {
-  background-color: #f2f2f2 !important; }
-  .picturesBackground .leftCard {
-    margin-right: 0px; }
-  .picturesBackground .rightCard {
-    margin-left: 0px; }
+.picturesBackground{background-color:#f2f2f2 !important}.picturesBackground .leftCard{margin-right:0}
+.picturesBackground .rightCard{margin-left:0}

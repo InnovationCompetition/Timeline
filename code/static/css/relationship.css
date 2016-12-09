@@ -1,28 +1,6 @@
-.relationBackground {
-  position: relative; }
-  .relationBackground canvas {
-    position: absolute;
-    top: 0px;
-    z-index: 1; }
-  .relationBackground .md-subheader-inner {
-    color: #525252;
-    font-size: 1em;
-    padding-left: 8px; }
-  .relationBackground md-list {
-    background-color: #f2f2f2; }
-    .relationBackground md-list md-list-item .md-button.md-fab.md-mini {
-      color: #616161;
-      background-color: white;
-      border-style: solid;
-      border-width: 6px;
-      line-height: 0px; }
-    .relationBackground md-list md-list-item .md-button.md-fab.md-mini:not([disabled]).md-focused {
-      background-color: white !important;
-      color: #616161 !important; }
-    .relationBackground md-list md-list-item .md-button.md-fab.md-mini:not([disabled]):hover {
-      background-color: #FF4081 !important;
-      color: white !important; }
-    .relationBackground md-list md-list-item img {
-      outline: none; }
-    .relationBackground md-list md-list-item .avatar {
-      margin: 8px 12px 8px 12px; }
+.relationBackground{position:relative}.relationBackground canvas{position:absolute;top:0;z-index:1}
+.relationBackground .md-subheader-inner{color:#525252;font-size:1em;padding-left:8px}
+.relationBackground md-list{background-color:#f2f2f2}.relationBackground md-list md-list-item .md-button.md-fab.md-mini{color:#616161;background-color:white;border-style:solid;border-width:6px;line-height:0}
+.relationBackground md-list md-list-item .md-button.md-fab.md-mini:not([disabled]).md-focused{background-color:white !important;color:#616161 !important}
+.relationBackground md-list md-list-item .md-button.md-fab.md-mini:not([disabled]):hover{background-color:#ff4081 !important;color:white !important}
+.relationBackground md-list md-list-item img{outline:0}.relationBackground md-list md-list-item .avatar{margin:8px 12px 8px 12px}

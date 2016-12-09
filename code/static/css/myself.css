@@ -1,41 +1,5 @@
-.userContainer {
-  height: 204px;
-  position: relative; }
-  .userContainer .userBackground {
-    width: 100%;
-    height: 144px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% auto; }
-  .userContainer .avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
-    position: absolute;
-    left: 12px;
-    top: 104px; }
-  .userContainer .attribute {
-    color: #525252;
-    text-align: center;
-    padding: 6px 0px 2px 0px; }
-  .userContainer .value {
-    font-size: 1.2em;
-    text-align: center;
-    padding: 2px 0px 6px 0px; }
-  .userContainer .md-flat {
-    margin-top: 12px;
-    margin-bottom: 12px;
-    background: #f0f0f0; }
-  .userContainer md-tabs-content-wrapper {
-    height: 100%; }
-
-.addButton {
-  position: fixed;
-  right: 12px;
-  bottom: 12px; }
-  .addButton .menuButton {
-    padding: 0px !important;
-    font-weight: normal;
-    color: #525252 !important;
-    font-size: 0.6em;
-    min-width: 64px; }
+.userContainer{height:204px;position:relative}.userContainer .userBackground{width:100%;height:144px;background-repeat:no-repeat;background-position:center center;background-size:100% auto}
+.userContainer .avatar{width:80px;height:80px;border-radius:40px;position:absolute;left:12px;top:104px}
+.userContainer .attribute{color:#525252;text-align:center;padding:6px 0 2px 0}.userContainer .value{font-size:1.2em;text-align:center;padding:2px 0 6px 0}
+.userContainer .md-flat{margin-top:12px;margin-bottom:12px;background:#f0f0f0}.userContainer md-tabs-content-wrapper{height:100%}
+.addButton{position:fixed;right:12px;bottom:12px}.addButton .menuButton{padding:0 !important;font-weight:normal;color:#525252 !important;font-size:.6em;min-width:64px}
