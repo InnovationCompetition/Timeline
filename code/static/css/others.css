@@ -1,36 +1,49 @@
-.others {
-  height: 100%;
+.othersBackground {
   background-color: #f2f2f2 !important; }
-  .others .padding {
-    padding-left: 10px;
-    padding-right: 10px; }
-  .others .backgroundWhite {
-    height: 80px;
-    background-color: white; }
-  .others .userAvatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%; }
-  .others .name {
-    font-size: 12px;
-    text-align: center; }
-  .others .backgroundGray {
+  .othersBackground .othersToolbar {
+    background-color: #ffffff !important;
+    height: 88px;
+    color: #525252 !important;
+    overflow: scroll !important; }
+    .othersBackground .othersToolbar .userContainer {
+      text-align: center;
+      margin: 0px 8px 0px 8px; }
+      .othersBackground .othersToolbar .userContainer .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 24px; }
+      .othersBackground .othersToolbar .userContainer .name {
+        height: 24px;
+        font-size: 0.7em;
+        text-align: center; }
+  .othersBackground .cardContainer {
+    width: 100%;
     background-color: #f2f2f2 !important; }
-  .others .card {
-    width: 260px;
-    height: 390px; }
-  .others .cardAvatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; }
-  .others .cardImg {
+    .othersBackground .cardContainer .space {
+      width: 280px; }
+    .othersBackground .cardContainer md-card-header {
+      height: 40px; }
+      .othersBackground .cardContainer md-card-header .avatar {
+        height: 40px;
+        width: 40px;
+        border-radius: 20px; }
+      .othersBackground .cardContainer md-card-header .username {
+        font-size: 1.16em;
+        color: #525252;
+        line-height: 40px;
+        padding: 0px 0px 0px 16px; }
+  .othersBackground .cardImg {
     height: 50%;
     background-size: cover; }
-  .others .addButton {
+  .othersBackground md-card-content {
+    color: #525252 !important; }
+    .othersBackground md-card-content p {
+      font-size: 1.16em; }
+  .othersBackground .addButton {
     position: fixed;
     right: 12px;
     bottom: 12px; }
-    .others .addButton .menuButton {
+    .othersBackground .addButton .menuButton {
       padding: 0px !important;
       font-weight: normal;
       color: #525252 !important;

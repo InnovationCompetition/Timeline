@@ -1,5 +1,5 @@
 (function(){
-  angular.module('others', ['ngMaterial']).controller('othersController', function($scope, $state){
+  angular.module('others', ['ngMaterial']).controller('othersController', function($scope, $state, $timeout){
     var users, favorites, names, texts, times, i$, i;
     users = [];
     favorites = [];
@@ -16,21 +16,24 @@
         time: times[i]
       });
       favorites.push('../svg/favoriteBorder.svg');
+      $scope.users = users;
+      $scope.favorites = favorites;
+      $scope.toggleFavorite = fn$;
+      this.newPost = fn1$;
+      this.timeCapsule = fn2$;
     }
-    $scope.users = users;
-    $scope.favorites = favorites;
-    $scope.toogleFavorite = function(index){
+    function fn$(index){
       if (favorites[index] === '../svg/favorite.svg') {
         favorites[index] = '../svg/favoriteBorder.svg';
       } else {
         favorites[index] = '../svg/favorite.svg';
       }
-    };
-    this.newPost = function(){
+    }
+    function fn1$(){
       $state.go('newPost');
-    };
-    this.timeCapsule = function(){
+    }
+    function fn2$(){
       $state.go('timeCapsule');
-    };
+    }
   });
 }).call(this);
