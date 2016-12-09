@@ -1,59 +1,36 @@
-.othersBackground {
+.others {
+  height: 100%;
   background-color: #f2f2f2 !important; }
-  .othersBackground .friends {
-    height: 80px;
+  .others .padding {
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 10px; }
+  .others .backgroundWhite {
+    height: 80px;
     background-color: white; }
-  .othersBackground .friend {
-    width: 72px;
-    padding-left: 4px;
-    padding-right: 4px; }
-  .othersBackground .userAvatar {
+  .others .userAvatar {
     width: 48px;
     height: 48px;
     border-radius: 50%; }
-  .othersBackground .name {
-    width: 72px;
+  .others .name {
     font-size: 12px;
     text-align: center; }
-  .othersBackground .content {
+  .others .backgroundGray {
     background-color: #f2f2f2 !important; }
-  .othersBackground .card {
-    height: 100%;
-    margin: 0px 12px 0px 12px; }
-  .othersBackground .cardHeader {
-    height: 15%;
-    padding: 0;
-    padding-left: 5%;
-    padding-right: 5%; }
-  .othersBackground .cardAvatar {
-    width: 36px;
-    height: 36px;
+  .others .card {
+    width: 260px;
+    height: 390px; }
+  .others .cardAvatar {
+    width: 40px;
+    height: 40px;
     border-radius: 50%; }
-  .othersBackground .cardImg {
+  .others .cardImg {
     height: 50%;
     background-size: cover; }
-  .othersBackground .divider {
-    width: 300px;
-    height: 3%; }
-  .othersBackground .time {
-    height: 10%;
-    padding-left: 5%;
-    padding-right: 5%; }
-  .othersBackground .cardContent {
-    height: 12%;
-    padding: 0;
-    padding-left: 5%;
-    padding-right: 5%; }
-  .othersBackground .cardFooter {
-    height: 40px;
-    padding: 0; }
-  .othersBackground .addButton {
+  .others .addButton {
     position: fixed;
     right: 12px;
     bottom: 12px; }
-    .othersBackground .addButton .menuButton {
+    .others .addButton .menuButton {
       padding: 0px !important;
       font-weight: normal;
       color: #525252 !important;

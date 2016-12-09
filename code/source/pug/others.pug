@@ -1,34 +1,32 @@
 link(rel='stylesheet', type='text/css', href='../css/others.css')
 
-md-content.othersBackground(ng-controller='othersController as oc', layout='column', style='height: 100%', ng-cloak)
-	md-content.friends(layout='row')
-		div.friend(layout='column', layout-align='center center', ng-repeat='user in users')
-			md-card-avatar
-				img.userAvatar(ng-src='{{user.avatar}}')
-			span.name {{user.name}}
+md-content.others(ng-controller='othersController as oc', layout='column', ng-cloak)
+	md-content.padding.backgroundWhite(layout='row', layout-align='start center')
+		div.padding(flex='none', ng-repeat='user in users')
+			img.userAvatar(ng-src='{{user.avatar}}')
+			div.name {{user.name}}
 	md-divider
-	md-content.content(layout='column', flex)
-		div(flex='10')
-		div.md-padding(layout='row', flex='80')
-			md-card.card(layout='column', ng-repeat='user in users')
-				md-card-header.cardHeader(layout-align='start center')
+	md-content.padding.backgroundGray(layout='row', flex='noshrink', layout-align='start center')
+		div.padding(flex='none', ng-repeat='user in users')
+			md-card.card
+				md-card-header(layout-align='start center')
 					md-card-avatar
 						img.cardAvatar(ng-src='{{user.avatar}}')
 					md-card-header-text
 						span.md-title {{user.name}}
 				div.cardImg(style='background-image: url("{{user.picture}}")')
-				div.divider
-				span.time.md-headline {{user.time}}
-				md-card-content.cardContent
-					span {{user.text}}
-				md-card-footer.cardFooter(layout='row', layout-align='end start')
+				md-card-title
+					md-card-title-text
+						span.md-headline {{user.time}}
+				md-card-content
+					p {{user.text}}
+				md-card-actions(layout='row', layout-align='end start')
 					md-button(class='md-icon-button' aria-label='Favorite' ng-click='toogleFavorite($index)')
 						md-icon(md-svg-icon='{{favorites[$index]}}')
 					md-button(class='md-icon-button' aria-label='Settings')
 						md-icon(md-svg-icon='../svg/menu.svg')
 					md-button(class='md-icon-button' aria-label='Share')
 						md-icon(md-svg-icon='../svg/share.svg')
-		div(flex='10')
 	md-fab-speed-dial.addButton(md-open="false" md-direction="up" class="md-scale")
 		md-fab-trigger
 			md-button.md-fab(aria-label="menu")
