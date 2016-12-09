@@ -7,9 +7,10 @@ md-content.othersBackground(ng-controller='othersController as oc', layout='colu
 				img.userAvatar(ng-src='{{user.avatar}}')
 			span.name {{user.name}}
 	md-divider
-	md-content.content(layout='row', flex)
-		div.cardContainer(layout='column', layout-align='center center', ng-repeat='user in users')
-			md-card.card
+	md-content.content(layout='column', flex)
+		div(flex='10')
+		div.md-padding(layout='row', flex='80')
+			md-card.card(layout='column', ng-repeat='user in users')
 				md-card-header.cardHeader(layout-align='start center')
 					md-card-avatar
 						img.cardAvatar(ng-src='{{user.avatar}}')
@@ -27,6 +28,7 @@ md-content.othersBackground(ng-controller='othersController as oc', layout='colu
 						md-icon(md-svg-icon='../svg/menu.svg')
 					md-button(class='md-icon-button' aria-label='Share')
 						md-icon(md-svg-icon='../svg/share.svg')
+		div(flex='10')
 	md-fab-speed-dial.addButton(md-open="false" md-direction="up" class="md-scale")
 		md-fab-trigger
 			md-button.md-fab(aria-label="menu")
