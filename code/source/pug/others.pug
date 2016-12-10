@@ -9,7 +9,7 @@ md-content.othersBackground(ng-controller="othersController as oc" style="height
 
   md-content.cardContainer(style="height: calc(100% - 144px); width: 100%")
     div(style="width: {{users.length * 296}}px; height: 100%" layout="column")
-      div(style="height: 10%; min-height: 48px;")
+      div(style="height: 10%; min-height: 12px;")
       div(style="height: 80%" layout="row")
         md-card.cards(ng-repeat="user in users" style="height: 100%")
           div.space
